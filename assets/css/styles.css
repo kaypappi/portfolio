@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .text{
+        @apply text-secondary-500 dark:text-white 
+    }
+    .h1{
+      
+    }
+}
+
+@font-face {
+    font-family: 'Sen';
+    src: url('/assets/fonts/Sen-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'AeonikLight';
+    src: url('/assets/fonts/Aeonik-Light.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+  }
+@font-face {
+    font-family: 'Aeonik';
+    src: url('/assets/fonts/Aeonik-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'AeonikBold';
+    src: url('/assets/fonts/Aeonik-Bold.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  html{
+    scroll-behavior: smooth;
+  }
