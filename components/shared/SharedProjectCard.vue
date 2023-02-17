@@ -1,5 +1,5 @@
 <template>
-    <div class=" rounded-2xl overflow-hidden group ">
+    <div class=" rounded-2xl overflow-hidden group  cursor-pointer">
 
         <div class=" project-top relative w-full aspect-video overflow-hidden">
             <img v-if="project.mobile"
