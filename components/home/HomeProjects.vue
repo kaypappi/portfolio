@@ -1,7 +1,7 @@
 <template>
     <div class="">
-        <SharedCarousel :items="items" class=" hidden lg:block"/>
-        <div   v-for="item in items" :key="item" class="px-4 md:px-16 xl:px-40 lg:hidden py-8">
+        <SharedCarousel :items="data" class=" hidden lg:block"/>
+        <div   v-for="item in data" :key="item" class="px-4 md:px-16 xl:px-40 lg:hidden py-8">
             <div :class="`left-carousel `">
                     <div class="w-full h-52 md:h-96 bg-slate-500">
 
@@ -31,6 +31,9 @@
 
 <script setup>
 import { ref } from 'vue'
-
+const sanity = useSanity()
+const query = groq`*[_type == "projects"][0].projects[0...5]`
+const { data, refresh } = await useAsyncData('projects', () => sanity.fetch(query))
 const items = ref(['A', 'B', 'C'])
+onMounted(()=>console.log(data))
 </script>
