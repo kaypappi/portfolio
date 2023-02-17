@@ -48,11 +48,11 @@ const props = defineProps({
 })
 const activeItem = ref(0)
 const next = () => {
-    console.log(activeItem.value)
+    
     activeItem.value = activeItem.value >= props.items.length - 1 ? 0 : activeItem.value + 1
 }
 const prev = () => {
-    console.log(activeItem.value)
+    
     activeItem.value = activeItem.value <= 0 ? props.items.length - 1 : activeItem.value - 1
 }
 

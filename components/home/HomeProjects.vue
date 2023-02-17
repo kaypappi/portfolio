@@ -1,39 +1,30 @@
 <template>
-    <div class="">
-        <SharedCarousel :items="data" class=" hidden lg:block"/>
-        <div   v-for="item in data" :key="item" class="px-4 md:px-16 xl:px-40 lg:hidden py-8">
-            <div :class="`left-carousel `">
-                    <div class="w-full h-52 md:h-96 bg-slate-500">
-
-                    </div>
+    <div class="px-4 md:px-16 xl:px-40 py-40">
+        <masonry-wall :items="masonryItems" :ssr-columns="2" :column-width="500"  :gap="20" rtl>
+            <template #default="{ item, index }">
+                <div v-if="index===0" class=" py-4">
+                    <h4 class=" text-sm">MY PROJECTS</h4> 
+                    <h2 class=" text-5xl !leading-tight font-aeonik-bold">Work that I've done over the years</h2>
                 </div>
-                <div :class="`right-carousel flex flex-col justify-center my-8`">
-                    <div>
-                        <h4 class=" text-sm">EXPERIENCE</h4>
-                        <h1 class="text-5xl my-4 font-aeonik-bold max-w-md">Companies I have worked with in the past
-                        </h1>
-                        <h6 class=" text-xs text-gray-400">Always passionate about building useful products</h6>
-                    </div>
-                    <div class="flex gap-4 my-8 flex-wrap">
-                        <div class=" rounded-full border border-white py-2 px-8 w-max">ReactJs</div>
-                        <div class=" rounded-full border border-white py-2 px-8 w-max">ReactJs</div>
-                        <div class=" rounded-full border border-white py-2 px-8 w-max">ReactJs</div>
-                        <div class=" rounded-full border border-white py-2 px-8 w-max">ReactJs</div>
-                    </div>
-                    <p class=" max-w-md text-xs leading-relaxed">Lorem ipsum dolor sit amet consectetur. Sed consectetur
-                        malesuada lectus eu tristique dolor
-                        metus. Quisque sed ultrices quam nullam id. Dictumst proin fusce quis egestas. At pulvinar quis
-                        erat tincidunt vitae et. Lorem ipsum dolor sit amet consectetur. </p>
+                <div v-else-if="index >= masonryItems.length-1" class=" w-full flex justify-center my-28">
+                    <button class=" px-8 py-3  rounded-full bg-transparent ring ring-indigo-300 uppercase text-white hover:bg-indigo-300  hover:text-white transition-all ">View All Projects</button>
                 </div>
-        </div>
-    </div>
+                <div v-else>
+                    <SharedProjectCard v-visible="animate.popInBottom" :initial="{ 'transition-delay': `.${index * 3}s` }" :project="item"/>
+                </div>
+                
+            </template>
+        </masonry-wall>
+</div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import { vVisible } from "@/directives/vVisible"
+const animate = onAnimate()
 const sanity = useSanity()
 const query = groq`*[_type == "projects"][0].projects[0...5]`
 const { data, refresh } = await useAsyncData('projects', () => sanity.fetch(query))
 const items = ref(['A', 'B', 'C'])
-onMounted(()=>console.log(data))
+const masonryItems=computed(()=>[' ',...data.value,' '])
 </script>

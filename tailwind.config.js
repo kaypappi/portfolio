@@ -3,7 +3,6 @@ const colors = require("tailwindcss/colors");
 const settingsScreens = require('./tailwind.settings.screens')
 const settingsFontSizes = require('./tailwind.settings.fontSizes')
 module.exports = {
-  darkMode: 'class',
   mode: "jit",
   purge: [
     "./assets/**/*.{css}",
