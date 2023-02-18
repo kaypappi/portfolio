@@ -14,7 +14,7 @@
 
 
 
-    <div v-else class=" w-screen ">
+    <div v-else class=" w-screen bg-black">
       <slot></slot>
     </div>
 </transition>
@@ -72,7 +72,7 @@ onMounted(() => {
 .page-loader circle,
 .page-loader path {
   fill: transparent;
-  stroke: #57EB64;
+  stroke: #8a4af3;
   stroke-width: 6px;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;

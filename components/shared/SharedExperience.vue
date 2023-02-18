@@ -1,7 +1,7 @@
 <template>
     <div class=" w-full">
         <div ref="shw" class="grid gap-4 grid-cols-12 items-center shw w-full">
-            <img class="col-span-3" :src="$urlFor(experience.logo).url()" alt="logo">
+            <img class="col-span-3 md:col-span-2" :src="$urlFor(experience.logo).url()" alt="logo">
             <div class=" col-span-9 md:col-span-7 ml-2 mr-4 md:ml-4 md:mr-12  ">
                 <h4 class=" text-lg"> {{ experience.role }}</h4>
                 <div class=" col-span-3  md:hidden">
