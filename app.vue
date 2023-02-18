@@ -14,4 +14,7 @@
   background-image: url('./assets/imgs/noisebg.webp');
   background-size: inherit;
 }
+.menu-open{
+  overflow: hidden;
+}
 </style>
