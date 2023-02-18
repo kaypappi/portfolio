@@ -12,7 +12,7 @@
         <div>
             <SharedExperience v-visible="animate.popInBottom" :initial="{ 'transition-delay': `.${index * 2}s` }"
                 v-for="(experience, index) in data.experiences" :is-last="index >= data.experiences.length - 1"
-                :key="experience.company" :experience="experience" :class="['mt-10']" />
+                :key="experience.company" :experience="experience" :class="['mt-6 md:mt-10']" />
         </div>
     </div>
 </template>
