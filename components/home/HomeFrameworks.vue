@@ -20,18 +20,21 @@ const target = ref(null)
 const initialTop = ref(null)
 const targetIsVisible = useElementVisibility(target)
 const { x, top, right, bottom, left, width, height } = useElementBounding(target)
-const { y } = useScroll(window,{behavior:'smooth'})
+const { y,directions } = useScroll(window,{behavior:'smooth'})
 const transformValue = ref(0)
 
 watchEffect(() => {
 
     if (targetIsVisible.value) {
+        /* if(directions.bottom){
+          return  transformValue.value=Math.min((transformValue.value + width.value*0.1),((width.value+width.value/2) -10))
+        } */
         if (!initialTop.value) {
             initialTop.value = y.value
         }
         const diff = (y.value - initialTop.value) / 2
         x.value = diff
-        const min = Math.min(Math.max(diff, -(width.value + (width.value/2))), width.value + (width.value/2))
+        const min = Math.min(Math.max(diff, -(width.value + (width.value/2))), (width.value + (width.value/2)- 10))
          Math.min(Math,width.value + (width.value/2))
         return transformValue.value = min
     }
@@ -44,6 +47,6 @@ watchEffect(() => {
 .frame-wrapper {
     position: relative;
     left: -200px;
-    transition: all 0s linear;
+    transition: all .1s linear;
 }
 </style>
