@@ -14,8 +14,9 @@
 
 
 
-    <div v-else class=" w-screen bg-black">
+    <div v-else class=" w-screen bg-black relative">
       <slot></slot>
+      <SmallFooter/>
     </div>
 </transition>
 </template>
