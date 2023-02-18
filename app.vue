@@ -11,7 +11,7 @@
 </script>
 <style>
 .noisebg{
-  background-image: url('./assets/imgs/noisebg.webp');
+  background-image: url('./assets/imgs/noisebg5.png');
   background-size: inherit;
 }
 .menu-open{
