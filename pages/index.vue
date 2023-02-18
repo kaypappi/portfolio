@@ -6,26 +6,28 @@
       </div>
     </div>
     <div class="relative bg-black">
-      <div class=" noisebg ">
+      <div class=" noisebg">
         <div class=" layout">
           <SharedNav :opacity="calcOpacity" id="navRef" ref="navRef" class="z-40 " />
-          
-            <HomeExperience />
-            <HomePhilosophy v-setnav="'light'"  />
-            <HomeSkillset />
-            <HomeFrameworks />
-            <HomeProjects v-setnav="'light'"  class=" w-full text-white bg-black" />
-            <HomeQuote class=" text-white w-full py-7 bg-[#0f0f0f] border-y border-grey-700 " />
-            <div id="about" class=" sticky top-0  py-24 md:py-52 noisebg">
-              <HomeAbout class=""/>
-            </div>
-         
-          
-          <SharedFooter class=" sticky top-0  z-10 "/>
+
+          <HomeExperience />
+          <HomePhilosophy v-setnav="'light'" />
+          <HomeSkillset />
+          <div class=" w-full max-w-full overflow-hidden">
+            <HomeFrameworks class=" overflow-hidden" />
+          </div>
+          <HomeProjects v-setnav="'light'" class=" w-full text-white bg-black" />
+          <HomeQuote class=" text-white w-full py-7 bg-[#0f0f0f] border-y border-grey-700 " />
+          <div id="about" class=" sticky top-0  py-24 md:py-52 noisebg">
+            <HomeAbout class="" />
+          </div>
+
+
+          <SharedFooter class=" sticky top-0  z-10 " />
         </div>
       </div>
     </div>
-  </div>
+</div>
 </template>
 
 <script setup>
@@ -49,6 +51,4 @@ onMounted(() => {
 
 </script>
 
-<style>
-
-</style>
+<style></style>

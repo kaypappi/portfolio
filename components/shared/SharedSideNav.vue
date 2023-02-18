@@ -1,7 +1,7 @@
 <template>
-    <nav :style="{ height: '100svh' }" class=" fixed top-0  left-0 right-0 bottom-0 z-50 w-full bg-slate-900">
+    <nav :style="{ height:`100svh`,height:'100dvh'}" class=" fixed top-0  left-0 right-0 bottom-0 z-50 w-full bg-slate-900">
         <Icon @click="toggleSideNav" name="uil:times" size="32" class=" cursor-pointer absolute right-4 top-4" />
-        <ul class=" h-full flex flex-col w-full gap-12  justify-center items-center  text-slate-500 font-aeonik-bold">
+        <ul class=" h-full  flex flex-col w-full gap-12  justify-center items-center  text-slate-500 font-aeonik-bold">
             <NuxtLink @click.native="toggleSideNav" to="/#about">ABOUT</NuxtLink>
             <NuxtLink @click.native="toggleSideNav" class="" to="/#works">WORKS</NuxtLink>
             <NuxtLink @click.native="toggleSideNav" to="/#experience">EXPERIENCE</NuxtLink>
@@ -14,10 +14,13 @@
 </nav>
 </template>
 <script setup>
+import { useWindowSize } from '@vueuse/core';
+
 const props = defineProps({
     toggleSideNav: Function
 })
 const sanity = useSanity()
+const {height}= useWindowSize()
 const query = groq`*[_type == "footer"][0]{
     ...,
     'cv':cv.asset->url

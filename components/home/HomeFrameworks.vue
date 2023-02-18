@@ -1,6 +1,6 @@
 <template>
     <div :style="{ 'transform': `translateX(${transformValue}px)` }" ref="target" :data-t="transformValue"
-        :class="`frame-wrapper  text-white border-grey-700 border grid grid-cols-1 md:grid-cols-4`">
+        :class="`frame-wrapper w-full overflow-x-hidden  text-white border-grey-700 border grid grid-cols-1 md:grid-cols-4`">
         <div v-for=" item in data" :key="item.name"
             class=" border border-grey-700 flex  items-center justify-center py-8 flex-col">
             <img class=" w-12 h-12" :src="$urlFor(item.icon).url()" alt="framework">
