@@ -11,7 +11,7 @@
           <SharedNav :opacity="calcOpacity" id="navRef" ref="navRef" class="z-40 " />
           
             <HomeExperience />
-            <HomePhilosophy />
+            <HomePhilosophy v-setnav="'light'"  />
             <HomeSkillset />
             <HomeFrameworks />
             <HomeProjects class=" w-full text-white bg-black" />
@@ -30,6 +30,7 @@
 
 <script setup>
 import { useElementBounding } from '@vueuse/core'
+import { vSetnav } from '~~/directives/setNavtheme';
 const navRef = ref(null)
 const initialNavPosition = ref(null)
 

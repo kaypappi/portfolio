@@ -6,7 +6,7 @@
                     <img class=" w-54 ml-16" :src="$urlFor(footer.banner_image).url()" alt="footer image">
                 </div>
                 <h2 class=" mt-6 text-3xl  font-aeonik-bold !leading-tight">{{ footer.title }}</h2>
-                <p class=" text-base mb-6 mt-2  text-grey-500">{{ footer.subtitle }}</p>
+                <p class=" text-sm mb-6 mt-2  text-slate-400">{{ footer.subtitle }}</p>
                 <NuxtLink :to="`${footer.cv}?dl=`" target="_blank">
                     <button
                         class=" max-w-max px-8 py-3 rounded-full bg-white ring ring-white  text-gray-800 hover:bg-transparent hover:text-white">Download
@@ -32,7 +32,9 @@
             </div>
             <div
                 class=" col-span-12 md:col-span-7 md:border-l text-lg border-l-grey-700 flex gap-10 items-center justify-center md:justify-start  w-full md:pl-10">
-                <Icon class="" v-for="item in footer.socials" :name="item.icon" />
+                <NuxtLink v-for="item in footer.socials" :to="item.link" target="_blank">
+                    <Icon class=""  :name="item.icon" />
+                </NuxtLink>
             </div>
         </div>
 </div>

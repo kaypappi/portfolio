@@ -3,7 +3,7 @@
         <div>
             <h4 v-visible="animate.popInBottom" class=" text-5xl mb-4 font-aeonik-bold">{{data.title}}</h4>
             <p v-visible="animate.popInBottom" :initial="{ 'transition-delay': '.3s' }"
-                class=" text-sm font-aeonik-light max-w-xs leading-relaxed">{{data.subtitle}}
+                class=" text-sm text-slate-400 font-aeonik-light max-w-xs leading-relaxed">{{data.subtitle}}
             </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 lg:mt-0 ">
@@ -12,7 +12,7 @@
                     <div v-visible="animate.popInBottom" :initial="{ 'transition-delay': `.${index * 2}s` }">
                         <img class="w-20 h-20" :src="$urlFor(skill.icon).url()" alt="logo">
                         <h4 class="text-lg my-2">{{skill.title}}</h4>
-                        <p class=" text-sm leading-relaxed font-aeonik-light">{{ skill.desc}}</p>
+                        <p class=" text-sm text-slate-400 leading-relaxed font-aeonik-light">{{ skill.desc}}</p>
                     </div>
 
                 </div>

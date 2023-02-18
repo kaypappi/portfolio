@@ -1,6 +1,6 @@
 <template>
     <nav ref="mainNav"
-        :class="['sticky top-0 py-0  sticky-nav !leading-tight flex text-white text-sm px-4 md:px-16 xl:px-40', { '  border-t border-b border-grey-700': opacity > 0 }, { 'bg-white/10 backdrop-blur-md border-0  shadow-xs shadow-white ': opacity <= 0 }]">
+        :class="['sticky top-0 py-0  sticky-nav !leading-tight flex text-white transition-all duration-500 text-sm px-4 md:px-16 xl:px-40', { '  border-t border-b border-grey-700': opacity > 0 }, { ' backdrop-blur-md border-0  shadow-xs shadow-white ': opacity <= 0 },{'bg-white/10':opacity<=0 && dark},{'bg-black/40':!dark}]">
         <div class="nav-right flex items-center">
 
             <img class=" w-16 mb-2 hover:rotate-180 hover:mb-0 hover:mt-2 transition-all" src="../../assets/imgs/winkbit.png" alt="logo">
@@ -48,7 +48,7 @@ defineProps({
         default:1
     }
 })
-
+const dark=useDark()
 const detRef = ref(null)
 const menuRef = ref(null)
 const showMenu = ref(false)
@@ -64,6 +64,7 @@ const onHover = (state) => {
 const toggleSideNav = () => {
     showSideNav.value = !showSideNav.value
 }
+
 
 
 
