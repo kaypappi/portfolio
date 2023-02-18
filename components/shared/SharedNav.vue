@@ -22,9 +22,9 @@
                 <div v-element-hover="onHover" key="menuRef" ref="menuRef" v-else
                     class="nav-main ml-auto flex items-center">
                     <ul>
-                        <NuxtLink to="/">ABOUT</NuxtLink>
-                        <NuxtLink class="mx-8 md:mx-12" to="/">WORKS</NuxtLink>
-                        <NuxtLink to="/">EXPERIENCE</NuxtLink>
+                        <NuxtLink to="/#about" class=" hover:text-indigo-300">ABOUT</NuxtLink>
+                        <NuxtLink class="mx-8 md:mx-12 hover:text-indigo-300" to="/#works">WORKS</NuxtLink>
+                        <NuxtLink to="/#experience" class="hover:text-indigo-300">EXPERIENCE</NuxtLink>
                     </ul>
                     <button class=" ml-8 md:ml-12 px-8 py-3 rounded-full bg-white ring ring-white  text-gray-800 hover:bg-transparent hover:text-white">Get in touch</button>
                 </div>

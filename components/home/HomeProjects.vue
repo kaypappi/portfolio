@@ -1,5 +1,5 @@
 <template>
-    <div class="px-4 md:px-16 xl:px-40 py-40">
+    <div id="works" class="px-4 md:px-16 xl:px-40 py-40">
         <masonry-wall :items="masonryItems" :ssr-columns="2" :column-width="500"  :gap="20" rtl>
             <template #default="{ item, index }">
                 <div v-if="index===0" class=" py-4">

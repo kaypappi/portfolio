@@ -1,5 +1,6 @@
 <template>
     <div
+    id="experience"
         class="experience py-32 px-4 md:px-16 xl:px-40 relative z-10  text-white grid gap-8 lg:gap-0 grid-cols-1 lg:grid-cols-2">
         <div>
             <h4 v-visible="animate.popInBottom" class=" text-sm">EXPERIENCE</h4>
