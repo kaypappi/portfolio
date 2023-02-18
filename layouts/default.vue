@@ -1,7 +1,6 @@
 <template>
   <transition name="fade" mode="out-in">
-    <div v-if="loading" class="page-loader  h-screen w-screen flex align-items-center justify-content-center bg-black">
-      <div class=" h-screen w-screen flex items-center relative justify-center ">
+      <div v-if="loading" class="page-loader bg-red-500  flex items-center relative justify-center ">
         <svg class=" absolute top-[50%] left-[50%]" xmlns="http://www.w3.org/2000/svg" width="200" height="200">
           <!-- <circle cx="100" cy="100" r="80" pathLength="1"></circle> -->
           <path id="path1" stroke-linejoin="round" fill="none" stroke-linecap="round"
@@ -9,17 +8,16 @@
             stroke-width="5" pathLength="1" />
 
         </svg>
-        <img class=" loader w-16 mb-2 opacity-0 -ml-24 hover:rotate-180 hover:mb-0 hover:mt-2 transition-all" src="../assets/imgs/winkbit.png"
-          alt="logo" />
+        <img class=" loader w-16 mb-2 opacity-0 -ml-24 hover:rotate-180 hover:mb-0 hover:mt-2 transition-all"
+          src="../assets/imgs/winkbit.png" alt="logo" />
       </div>
-    </div>
+
 
 
     <div v-else class="  h-screen w-screen ">
       <slot></slot>
     </div>
-  </transition>
-
+</transition>
 </template>
 <script setup>
 import { ref } from 'vue'
@@ -42,7 +40,7 @@ const loading = ref(true)
 onMounted(() => {
   timeline([
     ["#path1", draw(1), { duration: 0.8, delay: 1 }],
-    [".loader", animate('.loader',{ opacity: [0,1,1,0]},{duration:2,delay:2})],
+    [".loader", animate('.loader', { opacity: [0, 1, 1, 0] }, { duration: 2, delay: 2 })],
   ])
   setTimeout(() => {
     loading.value = false
@@ -63,6 +61,11 @@ onMounted(() => {
 
 .fade-leave-active {
   animation: going 0.4s;
+}
+
+.page-loader{
+  min-height: 100vh;
+  background: black;
 }
 
 .page-loader circle,
