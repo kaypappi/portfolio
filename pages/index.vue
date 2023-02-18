@@ -1,5 +1,5 @@
 <template>
-  <div ref="band" class="bg-black">
+  <div ref="band" class="bg-black sticky top-0">
     <div class="noisebg  sticky  top-0 z-0">
       <div class="layout relative">
         <shared-banner :opacity="calcOpacity" ref="bannerRef" />
