@@ -1,5 +1,5 @@
 <template>
-    <nav  class=" h-screen fixed top-0 overflow-y-hidden left-0 right-0  bottom-0z-50 w-full bg-slate-900 flex">
+    <nav :style="{height:`${maxHeight}px`}" class=" h-screen fixed top-0 overflow-y-hidden left-0 right-0  bottom-0z-50 w-full bg-slate-900 flex">
         <Icon @click="toggleSideNav" name="uil:times" size="32" class=" cursor-pointer absolute right-4 top-4" />
         <ul  class="grow flex flex-col w-full gap-12  justify-center items-center  text-slate-500 font-aeonik-bold">
             <NuxtLink @click.native="toggleSideNav" to="/#about">ABOUT</NuxtLink>
@@ -20,11 +20,12 @@ const props = defineProps({
     toggleSideNav: Function
 })
 const sanity = useSanity()
-const {height}= useWindowSize()
+const maxHeight=ref(500)
 const query = groq`*[_type == "footer"][0]{
     ...,
     'cv':cv.asset->url
 }`
 const { data: footer, refresh } = await useAsyncData('footer', () => sanity.fetch(query))
-watchEffect(()=>console.log(height.value))
+watchEffect(()=>console.log(maxHeight.value))
+onBeforeMount(()=>maxHeight.value=document.documentElement.clientHeight)
 </script>
