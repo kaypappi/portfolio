@@ -40,7 +40,9 @@ const { top } = useElementBounding(navRef)
 const calcOpacity = computed(() => {
   if (top.value === 0) return 0
   if (!top.value || top.value < 0) return 1
-  return (top.value) / initialNavPosition.value
+  const result=(top.value) / initialNavPosition.value
+  console.log(result)
+  return result
 })
 onMounted(() => {
   if (!initialNavPosition.value) {
