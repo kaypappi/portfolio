@@ -7,7 +7,7 @@
     </div>
     <div class="relative bg-black">
       <div class=" noisebg ">
-        <div class=" layout">
+        <div class=" layout ">
           <SharedNav :opacity="calcOpacity" :top="top" id="navRef" ref="navRef" class="z-40 " />
           <HomeExperience />
           <HomePhilosophy v-setnav="'light'" />
