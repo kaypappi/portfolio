@@ -1,6 +1,6 @@
 <template>
   <transition name="fade" mode="out-in">
-      <div v-if="loading" class="page-loader bg-red-500  flex items-center relative justify-center ">
+      <div v-if="loading" class="page-loader  flex items-center relative justify-center ">
         <svg class=" absolute top-[50%] left-[50%]" xmlns="http://www.w3.org/2000/svg" width="200" height="200">
           <!-- <circle cx="100" cy="100" r="80" pathLength="1"></circle> -->
           <path id="path1" stroke-linejoin="round" fill="none" stroke-linecap="round"
@@ -22,7 +22,8 @@
 <script setup>
 import { ref } from 'vue'
 import { timeline, animate } from "motion"
-
+import { useWindowSize } from '@vueuse/core';
+const {height}= useWindowSize()
 const draw = (progress) => ({
   // This property makes the line "draw" in when animated
   strokeDashoffset: 1 - progress,
