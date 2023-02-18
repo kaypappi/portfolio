@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="relative bg-black">
-      <div class=" noisebg">
+      <div class=" noisebg ">
         <div class=" layout">
           <SharedNav :opacity="calcOpacity" id="navRef" ref="navRef" class="z-40 " />
 
