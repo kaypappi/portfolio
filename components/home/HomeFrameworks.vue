@@ -10,7 +10,7 @@
 </template>
 <script setup>
 import { ref, computed, watchEffect } from 'vue'
-import { useElementVisibility, useWindowScroll, useElementBounding } from '@vueuse/core'
+import { useElementVisibility, useScroll, useElementBounding } from '@vueuse/core'
 import { filename } from 'pathe/utils';
 
 const sanity = useSanity()
@@ -20,7 +20,7 @@ const target = ref(null)
 const initialTop = ref(null)
 const targetIsVisible = useElementVisibility(target)
 const { x, top, right, bottom, left, width, height } = useElementBounding(target)
-const { y } = useWindowScroll()
+const { y } = useScroll(window,{behavior:'smooth'})
 const transformValue = ref(0)
 
 watchEffect(() => {
