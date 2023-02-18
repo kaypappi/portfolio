@@ -1,6 +1,6 @@
 <template>
   <transition name="fade" mode="out-in">
-    <div v-if="loading" class="page-loader  vw-100 vh-100 d-flex align-items-center justify-content-center bg-black">
+    <div v-if="loading" class="page-loader  h-screen w-screen flex align-items-center justify-content-center bg-black">
       <div class=" h-screen w-screen flex items-center relative justify-center ">
         <svg class=" absolute top-[50%] left-[50%]" xmlns="http://www.w3.org/2000/svg" width="200" height="200">
           <!-- <circle cx="100" cy="100" r="80" pathLength="1"></circle> -->
