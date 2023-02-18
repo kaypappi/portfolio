@@ -14,7 +14,7 @@
 
 
 
-    <div v-else class="  h-screen w-screen ">
+    <div v-else class=" min-h-screen ">
       <slot></slot>
     </div>
 </transition>
