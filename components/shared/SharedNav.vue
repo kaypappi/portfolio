@@ -1,6 +1,6 @@
 <template>
     <nav ref="mainNav"
-        :class="['sticky top-0 py-0  sticky-nav !leading-tight flex text-white text-sm px-4 md:px-16 xl:px-40', { '  border-t border-b border-grey-700': opacity > 0 }, { 'bg-white/10 backdrop-blur-md border-0  shadow-xs shadow-white ': opacity <= 0 }]">
+        :class="['sticky top-0 py-0  sticky-nav !leading-tight transition-[background-color] flex text-white duration-500 text-sm px-4 md:px-16 xl:px-40', { '  border-t border-b border-grey-700': opacity > 0 }, { ' backdrop-blur-md border-0  shadow-xs shadow-white ': opacity <= 0 },{'bg-white/10':opacity<=0 && dark},{'bg-black/40':!dark}]">
         <div class="nav-right flex items-center">
 
             <img class=" w-16 mb-2 hover:rotate-180 hover:mb-0 hover:mt-2 transition-all" src="../../assets/imgs/winkbit.png" alt="logo">
@@ -22,11 +22,11 @@
                 <div v-element-hover="onHover" key="menuRef" ref="menuRef" v-else
                     class="nav-main ml-auto flex items-center">
                     <ul>
-                        <NuxtLink to="/">ABOUT</NuxtLink>
-                        <NuxtLink class="mx-8 md:mx-12" to="/">WORKS</NuxtLink>
-                        <NuxtLink to="/">EXPERIENCE</NuxtLink>
+                        <NuxtLink to="/#about" class=" hover:text-indigo-300">ABOUT</NuxtLink>
+                        <NuxtLink class="mx-8 md:mx-12 hover:text-indigo-300" to="/#works">WORKS</NuxtLink>
+                        <NuxtLink to="/#experience" class="hover:text-indigo-300">EXPERIENCE</NuxtLink>
                     </ul>
-                    <button class=" px-8 py-3 rounded-full bg-white ml-8 md:ml-12 text-gray-800">Get in touch</button>
+                    <button class=" ml-8 md:ml-12 px-8 py-3 rounded-full bg-white ring ring-white  text-gray-800 hover:bg-transparent hover:text-white">Get in touch</button>
                 </div>
             </transition>
         </template>
@@ -48,7 +48,7 @@ defineProps({
         default:1
     }
 })
-
+const dark=useDark()
 const detRef = ref(null)
 const menuRef = ref(null)
 const showMenu = ref(false)
@@ -64,6 +64,16 @@ const onHover = (state) => {
 const toggleSideNav = () => {
     showSideNav.value = !showSideNav.value
 }
+
+watchEffect(() => {
+
+if (showSideNav.value) {
+    return document.body.classList.add('menu-open')
+} else {
+    document.body.classList.remove('menu-open')
+}
+})
+
 
 
 

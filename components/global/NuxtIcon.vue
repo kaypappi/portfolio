@@ -20,7 +20,6 @@ watchEffect(async () => {
         const rawIcon = iconsImport[`/assets/svgs/${props.icon}.svg`]
         iconName.value = rawIcon
         if (NuxtIcon.value) {
-            console.log(NuxtIcon.value.children)
             NuxtIcon.value.children[0].removeAttribute('height')
             NuxtIcon.value.children[0].removeAttribute('width')
             NuxtIcon.value.children[0]
@@ -34,9 +33,7 @@ watchEffect(async () => {
             NuxtIcon.value.firstElementChild.classList.add($style.svg)
         }
     } catch {
-        console.error(
-            `[nuxt-icon] Icon '${props.icon}' doesn't exist in 'assets/icons'`
-        )
+        
     }
 })
 </script>

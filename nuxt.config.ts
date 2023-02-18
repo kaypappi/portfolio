@@ -1,9 +1,6 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 
 export default defineNuxtConfig({
-    colorMode: {
-        classSuffix: "",
-    },
     css: ["@/assets/css/styles.css"],
     router: {
         
@@ -14,7 +11,7 @@ export default defineNuxtConfig({
             autoprefixer: {},
         },
     },
-    modules: ['@nuxtjs/color-mode','nuxt-icon','@nuxtjs/sanity'],
+    modules: ['nuxt-icon','@nuxtjs/sanity'],
     sanity: {
         projectId: 'orygd7ym',
         dataset: 'production',

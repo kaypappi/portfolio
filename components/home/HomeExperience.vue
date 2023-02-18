@@ -1,12 +1,13 @@
 <template>
     <div
+    id="experience"
         class="experience py-32 px-4 md:px-16 xl:px-40 relative z-10  text-white grid gap-8 lg:gap-0 grid-cols-1 lg:grid-cols-2">
         <div>
             <h4 v-visible="animate.popInBottom" class=" text-sm">EXPERIENCE</h4>
             <h1 v-visible="animate.popInBottom" :initial="{ 'transition-delay': '.3s' }"
                 class="text-5xl my-4 font-aeonik-bold max-w-md">{{ data.experience_title }}</h1>
             <h6 v-visible="animate.popInBottom" :initial="{ 'transition-delay': '.6s' }"
-                class=" text-xs font-aeonik-light">{{ data.experience_subtitle }}</h6>
+                class=" text-xs text-slate-400 font-aeonik-light">{{ data.experience_subtitle }}</h6>
         </div>
         <div>
             <SharedExperience v-visible="animate.popInBottom" :initial="{ 'transition-delay': `.${index * 2}s` }"

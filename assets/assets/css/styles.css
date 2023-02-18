@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 @layer components {
-    .text{
-        @apply text-secondary-500 dark:text-white 
+    .btn{
+      @apply px-8 py-3 rounded-full bg-white ring ring-white  text-gray-800
+    }
+    .btn-transparent{
+      @apply bg-transparent ring-indigo-300 text-white
     }
 }
 
@@ -34,5 +37,10 @@
   }
 
   html{
-    scroll-behavior: smooth;
+
+    height: 20px;
+    overflow: hidden;
+  }
+  .btns{
+    background: red !important;
   }

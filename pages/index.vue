@@ -6,18 +6,22 @@
       </div>
     </div>
     <div class="relative bg-black">
-      <div class="relative noisebg ">
+      <div class=" noisebg ">
         <div class=" layout">
           <SharedNav :opacity="calcOpacity" id="navRef" ref="navRef" class="z-40 " />
-          <div class="relative z-10 overflow-x-hidden ">
+          
             <HomeExperience />
-            <HomePhilosophy />
+            <HomePhilosophy v-setnav="'light'"  />
             <HomeSkillset />
             <HomeFrameworks />
-            <HomeProjects class=" w-full text-white bg-black" />
-            <HomeQuote class=" text-white w-full py-7 bg-[#0f0f0f] border-y border-grey-700" />
-            <HomeAbout class=" my-24 md:my-52 "/>
-          </div>
+            <HomeProjects v-setnav="'light'"  class=" w-full text-white bg-black" />
+            <HomeQuote class=" text-white w-full py-7 bg-[#0f0f0f] border-y border-grey-700 " />
+            <div id="about" class=" sticky top-0  py-24 md:py-52 noisebg">
+              <HomeAbout class=""/>
+            </div>
+         
+          
+          <SharedFooter class=" sticky top-0  z-10 "/>
         </div>
       </div>
     </div>
@@ -26,6 +30,7 @@
 
 <script setup>
 import { useElementBounding } from '@vueuse/core'
+import { vSetnav } from '~~/directives/setNavtheme';
 const navRef = ref(null)
 const initialNavPosition = ref(null)
 
@@ -40,6 +45,8 @@ onMounted(() => {
     initialNavPosition.value = top.value
   }
 })
+
+
 </script>
 
 <style>

@@ -17,7 +17,7 @@ export default {
         } if (to.hash) {
             const el = await findEl(to.hash);
             
-            return { top: el ? el.offsetTop + 350 : 0, left: 0, behavior: "smooth" };
+            return { top: el ? el.offsetTop + 500 : 0, left: 0, behavior: "smooth" };
         }
         return {
             top: 0,
