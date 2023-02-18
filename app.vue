@@ -1,5 +1,5 @@
 <template>
-  <div ref="band" class="font-aeonik h1">
+  <div ref="band" class="font-aeonik h1 bg-black">
     <!-- <NuxtLoadingIndicator color="#f04f43" /> -->
     <NuxtLayout>
       <NuxtPage />
