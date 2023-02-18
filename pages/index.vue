@@ -9,7 +9,6 @@
       <div class=" noisebg ">
         <div class=" layout">
           <SharedNav :opacity="calcOpacity" :top="top" id="navRef" ref="navRef" class="z-40 " />
-          <div class=" text-white">{{ top }}</div>
           <HomeExperience />
           <HomePhilosophy v-setnav="'light'" />
           <HomeSkillset />
@@ -41,7 +40,6 @@ const calcOpacity = computed(() => {
   if (top.value === 0) return 0
   if (!top.value || top.value < 0) return 1
   const result=(top.value) / initialNavPosition.value
-  console.log(top.value,result)
   return result
 })
 onMounted(() => {
