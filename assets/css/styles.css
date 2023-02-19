@@ -43,6 +43,7 @@
   min-height: stretch;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none; 
+  width: 100%;
   }
 
   .fullH::-webkit-scrollbar {
