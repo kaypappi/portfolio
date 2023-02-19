@@ -14,7 +14,7 @@
 
 
 
-    <div v-else class="fullH bg-black relative">
+    <div v-else class="min-h-screen w-screen bg-black relative">
       <transition name="slide">
             <SharedSideNav v-if="showSideNav" :toggleSideNav="toggleSideNav" />
         </transition>
@@ -56,6 +56,7 @@ onMounted(() => {
     loading.value = false
   }, 4000)
 })
+
 
 </script>
 <style >

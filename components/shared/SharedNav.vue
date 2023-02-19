@@ -1,6 +1,6 @@
 <template>
     <nav ref="mainNav"
-        :class="['sticky top-0 py-2 !leading-tight transition-[background-color] flex text-white duration-500 text-sm px-4 md:px-16 xl:px-40', { '  border-t border-b border-grey-700': top >= 1 }, { ' bg-white/10 border-0 backdrop-blur  shadow-xs shadow-white ': top < 1 }, { 'bg-black/40': !dark && top < 1 }]">
+        :class="['sticky top-0 py-2 xl:py-4 !leading-tight transition-[background-color] flex text-white duration-500 text-sm px-4 md:px-16 xl:px-40', { '  border-t border-b border-grey-700': top >= 1 }, { ' bg-white/10 border-0 backdrop-blur  shadow-xs shadow-white ': top < 1 }, { 'bg-black/40': !dark && top < 1 }]">
         <div class="nav-right flex items-center">
 
             <img class=" w-10 mr-2  hover:rotate-180  transition-all" src="../../assets/imgs/winkbit.png" alt="logo">
