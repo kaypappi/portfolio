@@ -8,13 +8,16 @@
             stroke-width="5" pathLength="1" />
 
         </svg>
-        <img class=" loader w-16 mb-2 opacity-0 -ml-24 hover:rotate-180 hover:mb-0 hover:mt-2 transition-all"
+        <img class=" loader w-10  opacity-0 -ml-24 hover:rotate-180 hover:mb-0 hover:mt-2 transition-all"
           src="../assets/imgs/winkbit.png" alt="logo" />
       </div>
 
 
 
-    <div v-else class=" w-screen bg-black relative">
+    <div v-else class=" w-screen fullH bg-black relative">
+      <transition name="slide">
+            <SharedSideNav v-if="showSideNav" :toggleSideNav="toggleSideNav" />
+        </transition>
       <ToastsWrapper/>
       <slot></slot>
       <SmallFooter/>
@@ -26,6 +29,10 @@ import { ref } from 'vue'
 import { timeline, animate } from "motion"
 import { useWindowSize } from '@vueuse/core';
 const {height}= useWindowSize()
+const showSideNav = useSideNav()
+const toggleSideNav = () => {
+    showSideNav.value = !showSideNav.value
+}
 const draw = (progress) => ({
   // This property makes the line "draw" in when animated
   strokeDashoffset: 1 - progress,
@@ -91,6 +98,24 @@ onMounted(() => {
 .page-loader circle {
   transform-origin: 100px 100px;
   transform: rotate(-90deg);
+}
+
+.slide-enter-active {
+    transition: all 0.5s ease-out;
+
+}
+
+.slide-leave-active {
+
+    transition: all 0.5s ease-out;
+}
+
+.slide-enter-from {
+    transform: translateX(500px);
+}
+
+.slide-leave-to {
+    transform: translateX(500px);
 }
 
 @keyframes going {
