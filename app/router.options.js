@@ -13,6 +13,7 @@ export default {
                 })
         }
         if (savedPosition) {
+            
             return savedPosition;
         } if (to.hash) {
             const el = await findEl(to.hash);
