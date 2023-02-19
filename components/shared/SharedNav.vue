@@ -1,11 +1,13 @@
 <template>
     <nav ref="mainNav"
-        :class="['sticky top-0 py-0 !leading-tight transition-[background-color] flex text-white duration-500 text-sm px-4 md:px-16 xl:px-40', { '  border-t border-b border-grey-700': top >= 1 }, { ' bg-white/10 border-0 backdrop-blur  shadow-xs shadow-white ': top <1 },{'bg-black/40':!dark && top<1}]">
+        :class="['sticky top-0 py-2 !leading-tight transition-[background-color] flex text-white duration-500 text-sm px-4 md:px-16 xl:px-40', { '  border-t border-b border-grey-700': top >= 1 }, { ' bg-white/10 border-0 backdrop-blur  shadow-xs shadow-white ': top < 1 }, { 'bg-black/40': !dark && top < 1 }]">
         <div class="nav-right flex items-center">
 
-            <img class=" w-16 mb-2 hover:rotate-180 hover:mb-0 hover:mt-2 transition-all" src="../../assets/imgs/winkbit.png" alt="logo">
+            <img class=" w-10 mr-2  hover:rotate-180  transition-all" src="../../assets/imgs/winkbit.png" alt="logo">
 
-            <h4 class=" font-bold font-aeonik-bold">WESLEY <br /> UKADIKE</h4>
+            <NuxtLink to="/">
+                <h4 class=" font-bold font-aeonik-bold">WESLEY <br /> UKADIKE</h4>
+            </NuxtLink>
 
         </div>
         <template class=" hidden lg:flex ml-auto items-center font-extralight  font-aeonik-light">
@@ -15,7 +17,7 @@
                     <h4>BASED IN LAGOS <br /> NIGERIA, NG</h4>
                     <h4 class="mx-8 md:ml-12 md:mr-24">CURRENTLY SOFTWARE ENGINEER <br /> BLACKCOPPER</h4>
                     <div v-element-hover="onHover" class="py-2 px-6 cursor-pointer">
-                        <nuxt-icon v-element-hover="onHover" icon="menu"  class=" cursor-pointer w-6 h-max text-white" />
+                        <nuxt-icon v-element-hover="onHover" icon="menu" class=" cursor-pointer w-6 h-max text-white" />
                     </div>
 
                 </div>
@@ -26,7 +28,9 @@
                         <NuxtLink class="mx-8 md:mx-12 hover:text-indigo-300" to="/#works">WORKS</NuxtLink>
                         <NuxtLink to="/#experience" class="hover:text-indigo-300">EXPERIENCE</NuxtLink>
                     </ul>
-                    <button class=" ml-8 md:ml-12 px-8 py-3 rounded-full bg-white ring ring-white  text-gray-800 hover:bg-transparent hover:text-white">Get in touch</button>
+                    <button
+                        class=" ml-8 md:ml-12 px-8 py-3 rounded-full bg-white ring ring-white  text-gray-800 hover:bg-transparent hover:text-white">Get
+                        in touch</button>
                 </div>
             </transition>
         </template>
@@ -44,14 +48,14 @@ import { vElementHover } from '@vueuse/components'
 
 defineProps({
     opacity: {
-        type:Number,
-        default:1
+        type: Number,
+        default: 1
     },
-    top:{
-        type:Number
+    top: {
+        type: Number
     }
 })
-const dark=useDark()
+const dark = useDark()
 const detRef = ref(null)
 const menuRef = ref(null)
 const showMenu = ref(false)
@@ -70,11 +74,11 @@ const toggleSideNav = () => {
 
 watchEffect(() => {
 
-if (showSideNav.value) {
-    return document.body.classList.add('menu-open')
-} else {
-    document.body.classList.remove('menu-open')
-}
+    if (showSideNav.value) {
+        return document.body.classList.add('menu-open')
+    } else {
+        document.body.classList.remove('menu-open')
+    }
 })
 
 
@@ -103,6 +107,7 @@ if (showSideNav.value) {
 
     opacity: 0;
 }
+
 .slide-enter-active {
     transition: all 0.5s ease-out;
 
@@ -117,7 +122,6 @@ if (showSideNav.value) {
     transform: translateX(500px);
 }
 
-.slide-leave-to{
+.slide-leave-to {
     transform: translateX(500px);
-}
-</style>
+}</style>
