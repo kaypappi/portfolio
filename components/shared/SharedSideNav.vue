@@ -26,6 +26,6 @@ const query = groq`*[_type == "footer"][0]{
     'cv':cv.asset->url
 }`
 const { data: footer, refresh } = await useAsyncData('footer', () => sanity.fetch(query))
-/* watchEffect(()=>console.log(maxHeight.value))
+/* watchEffect(()=>
 onBeforeMount(()=>maxHeight.value=document.documentElement.clientHeight) */
 </script>

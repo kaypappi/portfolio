@@ -1,1 +1,4 @@
-export const useDark = () => useState<boolean>('dark', () => true)
+import { debounceFilter, watchWithFilter } from '@vueuse/core'
+import { Notification } from './useToast'
+export const useDark = () => useState('dark', () => true)
+export const useNoti=()=>useState<Notification[]>('noti',()=>[])

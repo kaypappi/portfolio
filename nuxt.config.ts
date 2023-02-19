@@ -17,4 +17,13 @@ export default defineNuxtConfig({
         dataset: 'production',
         apiVersion: '2021-10-21'
     },
+    runtimeConfig: {
+
+        public: {
+            recaptcha:{
+                siteKey: '6LdyK5QkAAAAACG78UQoZGLg3cw25WVXYFSVjELN',
+                secretKey:'6LdyK5QkAAAAADEuLWOelKLChcpQxSmPnxhmJuAf'
+            }, // can be overridden by NUXT_API_SECRET environment variable,
+        }
+      },
 })

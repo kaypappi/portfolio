@@ -15,6 +15,7 @@
 
 
     <div v-else class=" w-screen bg-black relative">
+      <ToastsWrapper/>
       <slot></slot>
       <SmallFooter/>
     </div>
