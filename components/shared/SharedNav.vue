@@ -37,9 +37,6 @@
         <div class="py-2 px-6 cursor-pointer flex items-center lg:hidden ml-auto ">
             <nuxt-icon @click="toggleSideNav" icon="menu" class=" cursor-pointer w-6 h-max" />
         </div>
-        <transition name="slide">
-            <SharedSideNav v-if="showSideNav" :toggleSideNav="toggleSideNav" />
-        </transition>
     </nav>
 </template>
 
@@ -59,7 +56,7 @@ const dark = useDark()
 const detRef = ref(null)
 const menuRef = ref(null)
 const showMenu = ref(false)
-const showSideNav = ref(false)
+const showSideNav = useSideNav()
 
 const onHover = (state) => {
     if (state) {
@@ -107,21 +104,4 @@ watchEffect(() => {
 
     opacity: 0;
 }
-
-.slide-enter-active {
-    transition: all 0.5s ease-out;
-
-}
-
-.slide-leave-active {
-
-    transition: all 0.5s ease-out;
-}
-
-.slide-enter-from {
-    transform: translateX(500px);
-}
-
-.slide-leave-to {
-    transform: translateX(500px);
-}</style>
+</style>
