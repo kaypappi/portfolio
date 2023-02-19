@@ -41,6 +41,12 @@
   min-height: -moz-available;
   min-height: -webkit-fill-available;
   min-height: stretch;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none; 
+  }
+
+  .fullH::-webkit-scrollbar {
+    display: none;
   }
 
   html{
@@ -49,10 +55,22 @@
   min-height: -moz-available;
   min-height: -webkit-fill-available;
   min-height: stretch;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none; 
   }
   body{
     min-height: 100vh;            /* fall-back */
   min-height: -moz-available;
   min-height: -webkit-fill-available;
   min-height: stretch;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none; 
   }
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  html::-webkit-scrollbar {
+    display: none;
+  }
+  
