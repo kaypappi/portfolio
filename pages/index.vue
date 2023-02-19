@@ -1,13 +1,13 @@
 <template>
-  <div ref="band" class="bg-black">
+  <div ref="band" class="bg-black fullH">
     <div class="noisebg  sticky  top-0 z-0">
       <div class="layout relative">
         <shared-banner :opacity="calcOpacity" ref="bannerRef" />
       </div>
     </div>
-    <div class="relative bg-black">
-      <div class=" noisebg ">
-        <div class=" layout ">
+    <div class="relative bg-black fullH">
+      <div class=" noisebg fullH">
+        <div class=" layout fullH max-w-full">
           <SharedNav :opacity="calcOpacity" :top="top" id="navRef" ref="navRef" class="z-40 " />
           <HomeExperience />
           <HomePhilosophy v-setnav="'light'" />

@@ -40,7 +40,7 @@
     min-height: 100vh;            /* fall-back */
   min-height: -moz-available;
   min-height: -webkit-fill-available;
-  min-height: fill-available;
+  min-height: stretch;
   }
 
   html{
@@ -48,11 +48,11 @@
     min-height: 100vh;            /* fall-back */
   min-height: -moz-available;
   min-height: -webkit-fill-available;
-  min-height: fill-available;
+  min-height: stretch;
   }
   body{
     min-height: 100vh;            /* fall-back */
   min-height: -moz-available;
   min-height: -webkit-fill-available;
-  min-height: fill-available;
+  min-height: stretch;
   }

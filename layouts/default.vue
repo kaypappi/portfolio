@@ -14,7 +14,7 @@
 
 
 
-    <div v-else class=" w-screen fullH bg-black relative">
+    <div v-else class="fullH bg-black relative">
       <transition name="slide">
             <SharedSideNav v-if="showSideNav" :toggleSideNav="toggleSideNav" />
         </transition>
