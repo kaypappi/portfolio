@@ -1,5 +1,5 @@
 <template>
-    <div class=" text-white w-full min-h-screen bg-black flex flex-col pt-20 ">
+    <div id="footer" class=" text-white w-full min-h-screen bg-black flex flex-col pt-20 ">
         <div class="footer-top grid grid-cols-1 md:grid-cols-2 gap-10 grow  px-4 md:px-16 xl:px-40">
             <div class=" w-full h-full flex flex-col items-center md:items-start justify-center ">
                 <div class="avatar-wrapper w-52 h-52 rounded-full bg-white flex items-end justify-center">

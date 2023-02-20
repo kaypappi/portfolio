@@ -28,9 +28,11 @@
                         <NuxtLink class="mx-8 md:mx-12 hover:text-indigo-300" to="/#works">WORKS</NuxtLink>
                         <NuxtLink to="/#experience" class="hover:text-indigo-300">EXPERIENCE</NuxtLink>
                     </ul>
-                    <button
-                        class=" ml-8 md:ml-12 px-8 py-3 rounded-full bg-white ring ring-white  text-gray-800 hover:bg-transparent hover:text-white">Get
-                        in touch</button>
+                    <NuxtLink to="/#footer">
+                        <button
+                            class=" ml-8 md:ml-12 px-8 py-3 rounded-full bg-white ring ring-white  text-gray-800 hover:bg-transparent hover:text-white">Get
+                            in touch</button>
+                    </NuxtLink>
                 </div>
             </transition>
         </template>
