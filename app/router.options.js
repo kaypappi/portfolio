@@ -14,7 +14,11 @@ export default {
         }
         if (savedPosition) {
             
-            return savedPosition;
+            return {
+                top: 0,
+                left: 0,
+                behavior: "smooth"
+            };
         } if (to.hash) {
             const el = await findEl(to.hash);
             
