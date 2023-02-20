@@ -1,7 +1,7 @@
 <template>
     <div>
         <SharedNav :opacity="0" :top="0" id="navRef" ref="navRef" class="z-40 " />
-        <div v-setnav="'light'" class="px-4 md:px-16 xl:px-40 py-40 text-white">
+        <div v-setnav="'light'" class="px-4 md:px-16 xl:px-40 py-10 md:py-40 text-white">
         <masonry-wall :items="masonryItems" :ssr-columns="2" :column-width="columnWidth" :gap="40" rtl>
             <template #default="{ item, index }">
                 <div v-if="index === 0" class=" py-4">
