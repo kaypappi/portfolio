@@ -33,19 +33,16 @@
 import { useElementBounding } from '@vueuse/core'
 import { vSetnav } from '~~/directives/setNavtheme';
 const navRef = ref(null)
+const bannerRef=ref(null)
 const initialNavPosition = ref(null)
 
 const { top } = useElementBounding(navRef)
+const {bottom}=useElementBounding(bannerRef)
 const calcOpacity = computed(() => {
   if (top.value === 0) return 0
   if (!top.value || top.value < 0) return 1
-  const result=(top.value) / initialNavPosition.value
+  const result=(top.value) / bottom.value
   return result
-})
-onMounted(() => {
-  if (!initialNavPosition.value) {
-    initialNavPosition.value = top.value
-  }
 })
 
 
