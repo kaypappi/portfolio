@@ -15,6 +15,7 @@
 
 
     <div v-else class="min-h-screen w-screen bg-black relative">
+      <NuxtLoadingIndicator color="#312e81" height="5" />
       <transition name="slide">
             <SharedSideNav v-if="showSideNav" :toggleSideNav="toggleSideNav" />
         </transition>
