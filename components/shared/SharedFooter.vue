@@ -1,5 +1,5 @@
 <template>
-    <div class=" text-white w-full min-h-screen bg-black flex flex-col pt-20 ">
+    <div id="footer" class=" text-white w-full min-h-screen bg-black flex flex-col pt-20 ">
         <div class="footer-top grid grid-cols-1 md:grid-cols-2 gap-10 grow  px-4 md:px-16 xl:px-40">
             <div class=" w-full h-full flex flex-col items-center md:items-start justify-center ">
                 <div class="avatar-wrapper w-52 h-52 rounded-full bg-white flex items-end justify-center">
@@ -19,7 +19,7 @@
                     <FormsInput required v-model="form.name" label="Full Name" class="w-full mb-8" />
                     <FormsInput required v-model="form.email" label="Email" type="email" class="w-full mb-8" />
                     <FormsTextArea required v-model="form.message" label="Message" type="textarea" class="w-full mb-8" />
-                    <button type="submit"
+                    <button :disabled="isLoading" type="submit"
                         class=" w-full max-w-sm mt-8 px-8 py-3 rounded-md bg-white ring ring-white  text-gray-800 hover:bg-transparent hover:text-white">
                         <span v-if="!isLoading">Submit</span>
                         <Icon v-if="isLoading" name="ri:loader-5-fill" size="20" class="animate-spin " />
@@ -71,7 +71,7 @@ const { state: sendForm, refresh: refreshForm, execute: onSubmit, isLoading, err
     {
         immediate: false,
         onError: (e) => {
-            
+
             toast.createNotification({
                 title: `Sorry Couldn't reach out`,
                 message: e.text,

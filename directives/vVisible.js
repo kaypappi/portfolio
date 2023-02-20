@@ -31,7 +31,7 @@ export const vVisible = {
         const { initial:bindinInitial, enter:bindingEnter} = binding.value
         const initial={...bindinInitial,...vnode.props?.initial}
         const enter={...bindingEnter,...vnode.props?.enter}
-        const {once}=binding.modifiers
+        const {always}=binding.modifiers
         onIntersect(el, () => {
             el.style.cssText = cssObjectTotext({ ...cssTextToObject(el.style.cssText), ...enter })
 
@@ -39,7 +39,7 @@ export const vVisible = {
 
             el.style.cssText = cssObjectTotext({ ...cssTextToObject(el.style.cssText), ...initial })
 
-        },once,)
+        },!always,)
     }
 
 
