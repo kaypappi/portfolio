@@ -15,7 +15,7 @@
                     </NuxtLink>
                 </div>
                 <div v-else>
-                    <SharedProjectCard v-visible.always="animate.popInBottom" :initial="{ 'transition-delay': `.${index * 2}s` }"
+                    <SharedProjectCard v-visible.always="animate.popInBottom" 
                         :project="item" />
                 </div>
 
