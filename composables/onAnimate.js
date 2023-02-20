@@ -5,7 +5,7 @@ export const onAnimate=()=>{
                 transform: ' scale(0.9)',
                 transform: 'translateY(50px)',
                 opacity: 0,
-                transition: `all 1s ease-out`
+                transition: `all .5s ease-out`
             },
             enter: {
                 transform: ' scale(1)',
