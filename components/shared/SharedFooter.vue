@@ -14,8 +14,8 @@
                         CV</button>
                 </NuxtLink>
             </div>
-            <div class=" w-full flex flex-col justify-center">
-                <form @submit.prevent="onSubmit()">
+            <div class=" w-full flex flex-col justify-center items-center">
+                <form class=" max-w-sm w-full " @submit.prevent="onSubmit()">
                     <FormsInput required v-model="form.name" label="Full Name" class="w-full mb-8" />
                     <FormsInput required v-model="form.email" label="Email" type="email" class="w-full mb-8" />
                     <FormsTextArea required v-model="form.message" label="Message" type="textarea" class="w-full mb-8" />
