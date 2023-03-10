@@ -1,5 +1,9 @@
 <template>
   <div ref="band" class="font-aeonik bg-black fullH">
+    <SeoKit />
+    <OgImageStatic 
+      component="CustomBanner"
+    />
     <!-- <NuxtLoadingIndicator color="#f04f43" /> -->
     <NuxtLayout>
       <NuxtPage />

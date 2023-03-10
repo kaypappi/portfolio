@@ -15,7 +15,7 @@
           <div class=" w-full max-w-full overflow-hidden">
             <HomeFrameworks class=" overflow-hidden" />
           </div>
-          <HomeProjects v-setnav="'light'" class=" w-full text-white bg-black" />
+          <HomeProjects id="projects" v-setnav="'light'" class=" w-full text-white bg-black" />
           <HomeQuote class=" text-white w-full py-7 bg-[#0f0f0f] border-y border-grey-700 " />
           <div id="about" class=" sticky top-0  py-24 md:py-52 noisebg">
             <HomeAbout class="" />

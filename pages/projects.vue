@@ -9,7 +9,7 @@
                     <h2 class=" text-5xl !leading-tight font-aeonik-bold">Work that I've done over the years</h2>
                 </div>
                 <div v-else-if="index >= masonryItems.length - 1" class=" w-full flex justify-center my-28">
-                    <NuxtLink to="/">
+                    <NuxtLink to="/#projects">
                         <button
                             class=" px-8 py-3  rounded-full bg-transparent ring ring-indigo-300 uppercase text-white hover:bg-indigo-300  hover:text-white transition-all ">Go Back</button>
                     </NuxtLink>
