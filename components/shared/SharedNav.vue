@@ -3,7 +3,7 @@
         :class="['sticky top-0 py-2 xl:py-4 !leading-tight transition-[background-color] flex text-white duration-500 text-sm px-4 md:px-16 xl:px-40', { '  border-t border-b border-grey-700': top >= 1 }, { ' bg-white/10 border-0 backdrop-blur  shadow-xs shadow-white ': top < 1 }, { 'bg-black/40': !dark && top < 1 }]">
         <div class="nav-right flex items-center">
 
-            <img class=" w-10 mr-2  hover:rotate-180  transition-all" src="../../assets/imgs/winkbit.png" alt="logo">
+            <img class=" w-10 mr-2 hover:rotate-[360deg] duration-500 transition-all" src="../../assets/imgs/winkbit.png" alt="logo">
 
             <NuxtLink to="/">
                 <h4 class=" font-bold font-aeonik-bold">WESLEY <br /> UKADIKE</h4>
@@ -14,7 +14,7 @@
             <transition name="slide-fade" mode="out-in">
                 <div key="detRef" ref="detRef" v-if="opacity > 0.0051 && !showMenu"
                     class="nav-description ml-auto flex items-center">
-                    <h4>BASED IN LAGOS <br /> NIGERIA, NG</h4>
+                    <h4>BASED IN ONTARIO <br /> CANADA, CA</h4>
                     <h4 class="mx-8 md:ml-12 md:mr-24">CURRENTLY SOFTWARE ENGINEER <br /> BLACKCOPPER</h4>
                     <div v-element-hover="onHover" class="py-2 px-6 cursor-pointer">
                         <nuxt-icon v-element-hover="onHover" icon="menu" class=" cursor-pointer w-6 h-max text-white" />
@@ -89,6 +89,8 @@ watchEffect(() => {
     background-image: url('../../assets/imgs/noisebg.png');
     background-size: contain;
 } */
+
+.rot
 
 .slide-fade-enter-active {
     transition: all 0.3s ease-out;
