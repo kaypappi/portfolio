@@ -1,7 +1,7 @@
 <template>
     <nav class="fixed fullH top-0 overflow-y-hidden left-0 right-0  bottom-0 z-[200] w-full bg-slate-900 flex">
         <Icon @click="toggleSideNav" name="uil:times" size="32" class=" cursor-pointer text-white absolute right-4 top-4" />
-        <ul class="grow flex flex-col w-full gap-12  justify-center items-center  text-slate-500 font-aeonik-bold">
+        <ul class="grow flex flex-col w-full gap-12  justify-center items-center  text-slate-500 font-allrox">
             <NuxtLink @click.native="toggleSideNav" to="/#about">ABOUT</NuxtLink>
             <NuxtLink @click.native="toggleSideNav" class="" to="/#works">WORKS</NuxtLink>
             <NuxtLink @click.native="toggleSideNav" to="/#experience">EXPERIENCE</NuxtLink>

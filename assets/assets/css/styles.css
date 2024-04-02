@@ -3,44 +3,36 @@
 @tailwind utilities;
 
 @layer components {
-    .btn{
-      @apply px-8 py-3 rounded-full bg-white ring ring-white  text-gray-800
-    }
-    .btn-transparent{
-      @apply bg-transparent ring-indigo-300 text-white
-    }
+  .btn {
+    @apply px-8 py-3 rounded-full bg-white ring ring-white text-gray-800
+  }
+
+  .btn-transparent {
+    @apply bg-transparent ring-indigo-300 text-white
+  }
 }
 
 @font-face {
-    font-family: 'Sen';
-    src: url('/assets/fonts/Sen-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'AeonikLight';
-    src: url('/assets/fonts/Aeonik-Light.otf') format('opentype');
-    font-weight: 400;
-    font-style: normal;
-  }
+  font-family: 'Sen';
+  src: url('/public/fonts/Sen-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 @font-face {
-    font-family: 'Aeonik';
-    src: url('/assets/fonts/Aeonik-Regular.otf') format('opentype');
-    font-weight: 400;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'AeonikBold';
-    src: url('/assets/fonts/Aeonik-Bold.otf') format('opentype');
-    font-weight: 400;
-    font-style: normal;
-  }
+  font-family: 'Allrox';
+  src: url('/public/fonts/Allrox.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
 
-  html{
 
-    height: 20px;
-    overflow: hidden;
-  }
-  .btns{
-    background: red !important;
-  }
+html {
+
+  height: 20px;
+  overflow: hidden;
+}
+
+.btns {
+  background: red !important;
+}

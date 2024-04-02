@@ -1,5 +1,5 @@
 <template>
-  <div ref="band" class="font-aeonik bg-black fullH">
+  <div ref="band" class="font-allrox bg-black fullH">
     <SeoKit />
     <OgImageStatic 
       component="CustomBanner"

@@ -5,7 +5,7 @@
                 <div class="avatar-wrapper w-52 h-52 rounded-full bg-white flex items-end justify-center">
                     <img class=" w-54 ml-16" :src="$urlFor(footer.banner_image).url()" alt="footer image">
                 </div>
-                <h2 class=" mt-6 text-3xl text-center md:text-start  font-aeonik-bold !leading-tight">{{ footer.title }}
+                <h2 class=" mt-6 text-3xl text-center md:text-start  font-allrox font-bold !leading-tight">{{ footer.title }}
                 </h2>
                 <p class=" text-sm mb-6 mt-2 text-center md:text-start  text-slate-400">{{ footer.subtitle }}</p>
                 <NuxtLink :to="`${footer.cv}?dl=`" target="_blank">

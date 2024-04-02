@@ -11,7 +11,7 @@
             </div>
             <div class=" col-span-3 hidden md:block">
                 <h5 class=" text-sm uppercase">{{ experience.company }}</h5>
-                <h6 class="text-xs text-slate-400 font-aeonik-light ">{{ experience.start }} - {{ experience.end }}</h6>
+                <h6 class="text-xs text-slate-400 font-allrox font-light ">{{ experience.start }} - {{ experience.end }}</h6>
             </div>
         </div>
         <hr v-if="!isLast" class=" border-grey-700 mt-6 md:mt-10"/>

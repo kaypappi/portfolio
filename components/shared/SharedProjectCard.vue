@@ -13,10 +13,10 @@
                 </div>
                 <div class="w-full py-8 px-6 pb-12 bg-slate-900 relative">
                     <h4
-                        class=" text-lg font-aeonik-bold group-hover:translate-x-4 transition-all group-hover:text-indigo-300">
+                        class=" text-lg font-allrox group-hover:translate-x-4 transition-all group-hover:text-indigo-300">
                         {{
                             project.title }}</h4>
-                    <p class=" text-sm text-slate-400 font-aeonik-light mt-2">{{ project.decs }}</p>
+                    <p class=" text-sm text-slate-400 font-allrox mt-2">{{ project.decs }}</p>
                     <div
                         class="p-2 bg-indigo-300 w-max absolute -right-10 -bottom-10 group-hover:right-0 group-hover:bottom-0 transition-all">
                         <Icon name="ph:arrow-up-right" />

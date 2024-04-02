@@ -1,7 +1,7 @@
 <template>
   <div :style="{ opacity }" class=" stick  top-0 z-0 text-white py-20 md:py-32 px-4 md:px-16 xl:px-40 text-left ">
     <h1 v-visible="animate.popInBottom"
-      class=" mx-auto banner-text font-aeonik-bold text-5xl md:text-7xl max-w-5xl !leading-normal font-extrabold text-left">
+      class=" mx-auto banner-text font-allrox font-bold text-5xl md:text-7xl max-w-5xl !leading-normal font-extrabold text-left">
       {{data.banner_title}}</h1>
     <div v-visible="animate.popInBottom"
       class=" hidden md:flex absolute -bottom-14 right-20 bg-white rounded-full w-56 h-56 items-center justify-center">

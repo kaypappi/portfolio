@@ -4,7 +4,7 @@
             <template #default="{ item, index }">
                 <div v-if="index === 0" class=" py-4">
                     <h4 class=" text-sm text-slate-400">MY PROJECTS</h4>
-                    <h2 class=" text-5xl !leading-tight font-aeonik-bold">Work that I've done over the years</h2>
+                    <h2 class=" text-5xl !leading-tight font-allrox font-bold">Work that I've done over the years</h2>
                 </div>
                 <div v-else-if="index >= masonryItems.length - 1" class=" w-full flex justify-center my-28">
                     <NuxtLink to="/projects">

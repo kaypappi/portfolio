@@ -11,7 +11,7 @@
                 <div v-if="index === activeItem" :class="`right-carousel flex flex-col justify-center col-span-5`">
                     <div>
                         <h4 class=" text-sm">{{item.company}}</h4>
-                        <h1 class="text-5xl my-4 font-aeonik-bold max-w-md">{{item.title}}
+                        <h1 class="text-5xl my-4 font-allrox font-bold max-w-md">{{item.title}}
                         </h1>
                        <!--  <h6 class=" text-xs text-gray-400">Always passionate about building useful products</h6> -->
                     </div>

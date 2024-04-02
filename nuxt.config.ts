@@ -14,7 +14,13 @@ export default defineNuxtConfig({
             autoprefixer: {},
         },
     },
-    modules: ['nuxt-icon', '@nuxtjs/sanity'],
+    modules: ['nuxt-icon', '@nuxtjs/sanity','@nuxtjs/google-fonts','@nuxt/fonts'],
+    googleFonts:{
+        families:{
+          Outfit:true,
+          'Work+Sans':true,
+        }
+      },
     sanity: {
         projectId: 'orygd7ym',
         dataset: 'production',

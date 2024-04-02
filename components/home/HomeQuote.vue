@@ -2,17 +2,17 @@
   <div>
     <div class="slider">
       <div class="slide-track">
-        <div class="slide text-xl font-aeonik-bold "> I never stop learning, I always seek ways to improve my craft. It
+        <div class="slide text-xl font-allrox font-bold "> I never stop learning, I always seek ways to improve my craft. It
           drives everything i do <span class=" mx-8">🌸</span></div>
-        <div class="slide text-xl font-aeonik-bold "> I never stop learning, I always seek ways to improve my craft. It
+        <div class="slide text-xl font-allrox font-bold "> I never stop learning, I always seek ways to improve my craft. It
           drives everything i do <span class=" mx-8">🌸</span></div>
-        <div class="slide text-xl font-aeonik-bold "> I never stop learning, I always seek ways to improve my craft. It
+        <div class="slide text-xl font-allrox font-bold "> I never stop learning, I always seek ways to improve my craft. It
           drives everything i do <span class=" mx-8">🌸</span></div>
-        <div class="slide text-xl font-aeonik-bold "> I never stop learning, I always seek ways to improve my craft. It
+        <div class="slide text-xl font-allrox font-bold "> I never stop learning, I always seek ways to improve my craft. It
           drives everything i do <span class=" mx-8">🌸</span></div>
-        <div class="slide text-xl font-aeonik-bold "> I never stop learning, I always seek ways to improve my craft. It
+        <div class="slide text-xl font-allrox font-bold "> I never stop learning, I always seek ways to improve my craft. It
           drives everything i do <span class=" mx-8">🌸</span></div>
-        <div class="slide text-xl font-aeonik-bold "> I never stop learning, I always seek ways to improve my craft. It
+        <div class="slide text-xl font-allrox font-bold "> I never stop learning, I always seek ways to improve my craft. It
           drives everything i do <span class=" mx-8">🌸</span></div>
 
 

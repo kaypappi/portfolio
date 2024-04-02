@@ -6,11 +6,11 @@
             <img class=" w-10 mr-2 hover:rotate-[360deg] duration-500 transition-all" src="../../assets/imgs/winkbit.png" alt="logo">
 
             <NuxtLink to="/">
-                <h4 class=" font-bold font-aeonik-bold">WESLEY <br /> UKADIKE</h4>
+                <h4 class=" font-allrox font-bold">WESLEY <br /> UKADIKE</h4>
             </NuxtLink>
 
         </div>
-        <template class=" hidden lg:flex ml-auto items-center font-extralight  font-aeonik-light">
+        <template class=" hidden lg:flex ml-auto items-center font-extralight  font-allrox">
             <transition name="slide-fade" mode="out-in">
                 <div key="detRef" ref="detRef" v-if="opacity > 0.0051 && !showMenu"
                     class="nav-description ml-auto flex items-center">

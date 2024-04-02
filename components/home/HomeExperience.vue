@@ -5,9 +5,9 @@
         <div>
             <h4 v-visible="animate.popInBottom" class=" text-sm text-slate-400">EXPERIENCE</h4>
             <h1 v-visible="animate.popInBottom" :initial="{ 'transition-delay': '.3s' }"
-                class="text-5xl my-4 font-aeonik-bold max-w-md">{{ data.experience_title }}</h1>
+                class="text-5xl my-4 font-allrox font-bold max-w-md">{{ data.experience_title }}</h1>
             <h6 v-visible="animate.popInBottom" :initial="{ 'transition-delay': '.6s' }"
-                class=" text-xs text-slate-400 font-aeonik-light">{{ data.experience_subtitle }}</h6>
+                class=" text-xs text-slate-400 font-allrox font-light">{{ data.experience_subtitle }}</h6>
         </div>
         <div>
             <SharedExperience v-visible="animate.popInBottom" :initial="{ 'transition-delay': `.${index * 2}s` }"

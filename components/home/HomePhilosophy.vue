@@ -4,7 +4,7 @@
             <img class="w-full h-full object-cover" :src="$urlFor(data.image).url()" alt="logo">
         </div>
         <div class=" py-16 md:py-36 px-4 md:px-12 bg-stone-200">
-            <h3 class=" text-3xl md:text-5xl font-aeonik-bold mb-4">{{ data.philosophy_title }}</h3>
+            <h3 class=" text-3xl md:text-5xl font-allrox font-bold mb-4">{{ data.philosophy_title }}</h3>
             <p class=" max-w-xs text-sm font-thin">{{ data.philosophy_subtitle }}</p>
         </div>
 </div>
