@@ -3,9 +3,8 @@ const colors = require("tailwindcss/colors");
 const settingsScreens = require('./tailwind.settings.screens')
 const settingsFontSizes = require('./tailwind.settings.fontSizes')
 module.exports = {
-  mode: "jit",
-  purge: [
-    "./assets/**/*.{css}",
+  content: [
+    "./assets/**/*.css",
     "./components/*.{vue,js}",
     "./components/**/*.{vue,js}",
     "./pages/*.vue",
@@ -147,9 +146,6 @@ module.exports = {
         }
       },
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 };

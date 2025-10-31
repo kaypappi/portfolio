@@ -15,8 +15,11 @@
 </script>
 <style>
 .noisebg{
-  background-image: url('./assets/imgs/noisebg6.png');
-  background-size: inherit;
+  background:
+    radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 4px 4px;
+  background-color: #000;
 }
 .menu-open{
   overflow: hidden;

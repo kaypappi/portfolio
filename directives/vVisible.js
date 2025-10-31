@@ -20,27 +20,29 @@ const cssObjectTotext = (obj) => {
         .join('')
 }
 export const vVisible = {
-    created(el, binding,vnode) {
-      
-        const { initial:bindinInitial, enter:bindingEnter} = binding.value
-        const initial={...bindinInitial,...vnode.props?.initial}
-        const enter={...bindingEnter,...vnode.props?.enter}
+    created(el, binding, vnode) {
+        if (!el) return;
+
+        const { initial: bindinInitial, enter: bindingEnter } = binding.value
+        const initial = { ...bindinInitial, ...vnode.props?.initial }
+        const enter = { ...bindingEnter, ...vnode.props?.enter }
         el.style.cssText = cssObjectTotext({ ...cssTextToObject(el.style.cssText), ...initial })
     },
-    mounted(el, binding,vnode) {
-        const { initial:bindinInitial, enter:bindingEnter} = binding.value
-        const initial={...bindinInitial,...vnode.props?.initial}
-        const enter={...bindingEnter,...vnode.props?.enter}
-        const {always}=binding.modifiers
+    mounted(el, binding, vnode) {
+        if (!el) return;
+
+        const { initial: bindinInitial, enter: bindingEnter } = binding.value
+        const initial = { ...bindinInitial, ...vnode.props?.initial }
+        const enter = { ...bindingEnter, ...vnode.props?.enter }
+        const { always } = binding.modifiers
         onIntersect(el, () => {
-            el.style.cssText = cssObjectTotext({ ...cssTextToObject(el.style.cssText), ...enter })
-
+            if (el) {
+                el.style.cssText = cssObjectTotext({ ...cssTextToObject(el.style.cssText), ...enter })
+            }
         }, () => {
-
-            el.style.cssText = cssObjectTotext({ ...cssTextToObject(el.style.cssText), ...initial })
-
-        },!always,)
+            if (el) {
+                el.style.cssText = cssObjectTotext({ ...cssTextToObject(el.style.cssText), ...initial })
+            }
+        }, !always)
     }
-
-
 }

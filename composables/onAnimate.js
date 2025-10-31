@@ -2,22 +2,20 @@ export const onAnimate=()=>{
     const animate = {
         popInBottom: {
             initial: {
-                transform: ' scale(0.9)',
-                transform: 'translateY(50px)',
+                transform: 'scale(0.9) translateY(50px)',
                 opacity: 0,
-                transition: `all .5s ease-out`
+                transition: 'all .5s ease-out'
             },
             enter: {
-                transform: ' scale(1)',
-                transform: 'translateY(0px)',
+                transform: 'scale(1) translateY(0px)',
                 opacity: 1,
             }
         },
         rotateInRight:{
             initial:{
-                transform:'translateY(100px) rotate(45deg) ',
+                transform:'translateY(100px) rotate(45deg)',
                 opacity:0,
-                transition: 'all .5s ease-out '
+                transition: 'all .5s ease-out'
             },
             enter:{
                 transform:'rotate(0deg) translateY(0px)',

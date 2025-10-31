@@ -13,6 +13,12 @@ export const onIntersect = (
     once = true,
     options = { threshold: 0.1 }
 ) => {
+    // Check if element exists
+    if (!elementToWatch) {
+        console.warn('onIntersect: elementToWatch is undefined or null');
+        return null;
+    }
+
     // Initiate the observer
     const observer = new IntersectionObserver(([entry]) => {
         // If the element to watch is intersecting within the threshold

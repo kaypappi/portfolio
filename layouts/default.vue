@@ -8,8 +8,8 @@
             stroke-width="5" pathLength="1" />
 
         </svg>
-        <img class=" loader w-10  opacity-0 -ml-24 hover:rotate-180 hover:mb-0 hover:mt-2 transition-all"
-          src="../assets/imgs/winkbit.png" alt="logo" />
+        <img class=" loader w-10 h-10 opacity-0 -ml-24 hover:rotate-180 hover:mb-0 hover:mt-2 transition-all"
+          src="../assets/imgs/winkbit.png" alt="logo" width="40" height="40" />
       </div>
 
 
@@ -27,38 +27,19 @@
 </template>
 <script setup>
 import { ref } from 'vue'
-import { timeline, animate } from "motion"
-import { useWindowSize } from '@vueuse/core';
-const {height}= useWindowSize()
 const showSideNav = useSideNav()
 const toggleSideNav = () => {
     showSideNav.value = !showSideNav.value
 }
-const draw = (progress) => ({
-  // This property makes the line "draw" in when animated
-  strokeDashoffset: 1 - progress,
-
-  // Each line will be hidden until it starts drawing
-  // to fix a bug in Safari where the line can be
-  // partially visible even when progress is at 0
-  visibility: "visible",
-})
-
 
 const loading = ref(true)
 
-
 onMounted(() => {
-  timeline([
-    ["#path1", draw(1), { duration: 0.8, delay: 1 }],
-    [".loader", animate('.loader', { opacity: [0, 1, 1, 0] }, { duration: 2, delay: 2 })],
-  ])
+  // Simple loading animation - show for 2 seconds
   setTimeout(() => {
     loading.value = false
-  }, 4000)
+  }, 2000)
 })
-
-
 </script>
 <style >
 .layout {
