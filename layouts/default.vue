@@ -8,8 +8,8 @@
             stroke-width="5" pathLength="1" />
 
         </svg>
-        <img class=" loader w-10  opacity-0 -ml-24 hover:rotate-180 hover:mb-0 hover:mt-2 transition-all"
-          src="../assets/imgs/winkbit.png" alt="logo" />
+        <img class=" loader w-10 h-10 opacity-0 -ml-24 hover:rotate-180 hover:mb-0 hover:mt-2 transition-all"
+          src="../assets/imgs/winkbit.png" alt="logo" width="40" height="40" />
       </div>
 
 

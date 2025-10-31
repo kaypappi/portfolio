@@ -15,13 +15,13 @@
                 <div key="detRef" ref="detRef" v-if="opacity > 0.0051 && !showMenu"
                     class="nav-description ml-auto flex items-center">
                     <h4>BASED IN ONTARIO <br /> CANADA, CA</h4>
-                    <h4 class="mx-8 md:ml-12 md:mr-24">CURRENTLY SOFTWARE ENGINEER <br /> BLACKCOPPER</h4>
-                    <div @mouseenter="onHover(true)" @mouseleave="onHover(false)" class="py-2 px-6 cursor-pointer">
-                        <nuxt-icon icon="menu" class=" cursor-pointer w-6 h-max text-white" />
+                    <h4 class="mx-8 md:ml-12 md:mr-24">CURRENTLY LEAD SOFTWARE ENGINEER <br /> FALCONAERO</h4>
+                    <div v-element-hover="onHover" class="py-2 px-6 cursor-pointer">
+                        <nuxt-icon v-element-hover="onHover" icon="menu" class=" cursor-pointer w-6 h-max text-white" />
                     </div>
 
                 </div>
-                <div @mouseenter="onHover(true)" @mouseleave="onHover(false)" key="menuRef" ref="menuRef" v-else
+                <div v-element-hover="onHover" key="menuRef" ref="menuRef" v-else
                     class="nav-main ml-auto flex items-center">
                     <ul>
                         <NuxtLink to="/#about" class=" hover:text-indigo-300">ABOUT</NuxtLink>
@@ -42,21 +42,24 @@
     </nav>
 </template>
 
-<script  setup>
-defineProps({
-    opacity: {
-        type: Number,
-        default: 1
-    },
-    top: {
-        type: Number
-    }
+<script  setup lang="ts">
+import { defineProps, withDefaults, ref, watchEffect } from 'vue'
+import { vElementHover } from '@vueuse/components'
+
+const props = withDefaults(defineProps<{
+    opacity: number,
+    top: number
+}>(), {
+    opacity: 1,
+    top: 0
 })
 const dark = useDark()
 const detRef = ref(null)
 const menuRef = ref(null)
 const showMenu = ref(false)
 const showSideNav = useSideNav()
+
+
 
 const onHover = (state) => {
     if (state) {

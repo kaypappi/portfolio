@@ -5,7 +5,13 @@
       {{data.banner_title}}</h1>
     <div v-visible="animate.popInBottom"
       class=" hidden md:flex absolute -bottom-14 right-20 bg-white rounded-full w-56 h-56 items-center justify-center">
-      <img class=" w-54 mr-6 mb-28" :src="$urlFor(data.banner_image).url()" :alt="data.banner_title">
+      <img class=" w-54 mr-6 mb-28"
+        :src="$urlFor(data.banner_image).width(224).height(224).format('webp').quality(85).url()"
+        :alt="data.banner_title"
+        width="224"
+        height="224"
+        loading="eager"
+        fetchpriority="high" />
     </div>
   </div>
 </template>

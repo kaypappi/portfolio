@@ -1,25 +1,45 @@
 <template>
     <div id="works" class="px-4 md:px-16 xl:px-40 py-40">
-        <masonry-wall :items="masonryItems" :ssr-columns="2" :column-width="columnWidth" :gap="40" rtl>
-            <template #default="{ item, index }">
-                <div v-if="index === 0" class=" py-4">
-                    <h4 class=" text-sm text-slate-400">MY PROJECTS</h4>
-                    <h2 class=" text-5xl !leading-tight font-allrox font-bold">Work I've done over the years</h2>
-                </div>
-                <div v-else-if="index >= masonryItems.length - 1" class=" w-full flex justify-center my-28">
-                    <NuxtLink to="/projects">
-                        <button
-                            class=" px-8 py-3  rounded-full bg-transparent ring ring-indigo-300 uppercase text-white hover:bg-indigo-300  hover:text-white transition-all ">View
-                            All Projects</button>
-                    </NuxtLink>
-                </div>
-                <div v-else>
-                    <SharedProjectCard v-visible.always="animate.popInBottom"
-                        :project="item" />
-                </div>
+        <div v-if="masonryItems && masonryItems.length > 0 && isMounted">
+            <masonry-wall :items="masonryItems" :ssr-columns="2" :column-width="columnWidth" :gap="40" rtl>
+                <template #default="{ item, index }">
+                    <div v-if="index === 0" class=" py-4">
+                        <h4 class=" text-sm text-slate-400">MY PROJECTS</h4>
+                        <h2 class=" text-5xl !leading-tight font-allrox font-bold">Work I've done over the years</h2>
+                    </div>
+                    <div v-else-if="index >= masonryItems.length - 1" class=" w-full flex justify-center my-28">
+                        <NuxtLink to="/projects">
+                            <button
+                                class=" px-8 py-3  rounded-full bg-transparent ring ring-indigo-300 uppercase text-white hover:bg-indigo-300  hover:text-white transition-all ">View
+                                All Projects</button>
+                        </NuxtLink>
+                    </div>
+                    <div v-else>
+                        <SharedProjectCard v-visible.always="animate.popInBottom"
+                            :project="item" />
+                    </div>
 
-            </template>
-        </masonry-wall>
+                </template>
+            </masonry-wall>
+        </div>
+
+        <!-- Fallback layout while loading -->
+        <div v-else-if="data && data.length > 0">
+            <div class=" py-4">
+                <h4 class=" text-sm text-slate-400">MY PROJECTS</h4>
+                <h2 class=" text-5xl !leading-tight font-allrox font-bold">Work I've done over the years</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                <SharedProjectCard v-for="project in data" :key="project._id" v-visible.always="animate.popInBottom" :project="project" />
+            </div>
+            <div class=" w-full flex justify-center my-28">
+                <NuxtLink to="/projects">
+                    <button
+                        class=" px-8 py-3  rounded-full bg-transparent ring ring-indigo-300 uppercase text-white hover:bg-indigo-300  hover:text-white transition-all ">View
+                        All Projects</button>
+                </NuxtLink>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -32,10 +52,16 @@ const sanity = useSanity()
 const query = groq`*[_type == "projects"][0].projects[0...5]`
 const { data, refresh } = useLazyAsyncData('projects', () => sanity.fetch(query))
 const { width, height } = useWindowSize()
+const isMounted = ref(false)
+
 const columnWidth=computed(()=>{
     let maxWidth=350
     if(width.value>800) maxWidth=width.value/3
     return maxWidth
 })
 const masonryItems = computed(() => [' ', ...(data.value || []), ' '])
+
+onMounted(() => {
+    isMounted.value = true
+})
 </script>

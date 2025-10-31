@@ -17,6 +17,9 @@
     </div>
 </template>
 <script setup>
+
+
+
 const sanity = useSanity()
 const query = groq`*[_type == "footer"][0].socials`
 const { data: footer, refresh } = await useAsyncData('smallfooter', () => sanity.fetch(query))

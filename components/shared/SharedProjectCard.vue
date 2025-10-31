@@ -4,22 +4,20 @@
             <div class=" rounded-2xl overflow-hidden group  cursor-pointer">
 
                 <div class=" project-top relative w-full aspect-video overflow-hidden">
-                    <NuxtImg v-if="project.mobile"
+                    <img v-if="project.mobile"
                         :class="['w-full object-cover absolute top-0 left-0 right-0 bottom-0 z-0 blur-[2px]']"
-                        :src="$urlFor(project.image).url()"
+                        :src="$urlFor(project.image).width(800).height(450).format('webp').quality(85).url()"
                         :alt="project.title"
                         loading="lazy"
-                        format="webp"
-                        quality="80"
-                        sizes="320px sm:640px md:768px lg:1024px" />
+                        width="800"
+                        height="450" />
                     <div class="w-full h-full absolute top-0 left-0 right-0 bottom-0 z-10 bg-black opacity-30"></div>
-                    <NuxtImg :class="['w-full h-full z-20 relative', { 'object-contain object-center py-2': project.mobile }]"
-                        :src="$urlFor(project.image).url()"
+                    <img :class="['w-full h-full z-20 relative', { 'object-contain object-center py-2': project.mobile }]"
+                        :src="$urlFor(project.image).width(800).height(450).format('webp').quality(85).url()"
                         :alt="project.title"
                         loading="lazy"
-                        format="webp"
-                        quality="80"
-                        sizes="320px sm:640px md:768px lg:1024px" />
+                        width="800"
+                        height="450" />
                 </div>
                 <div class="w-full py-8 px-6 pb-12 bg-slate-900 relative">
                     <h4

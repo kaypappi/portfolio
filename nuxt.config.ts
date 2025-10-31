@@ -12,14 +12,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: [
-    "@nuxt/image",
-    "nuxt-icon",
-    "@nuxtjs/sanity",
-    "@nuxtjs/google-fonts",
-    "@nuxt/fonts",
-    "@nuxtjs/sitemap",
-  ],
+  modules: ["@nuxtjs/google-fonts", "@nuxt/fonts", "@nuxtjs/sitemap", '@nuxtjs/sanity','@nuxt/icon'],
   googleFonts: {
     families: {
       Outfit: {
@@ -33,17 +26,9 @@ export default defineNuxtConfig({
     display: 'swap',
     preload: true,
     preconnect: true,
+    subsets: ['latin', 'latin-ext'],
   },
-  sanity: {
-    projectId: "orygd7ym",
-    dataset: "production",
-    apiVersion: "2023-01-01",
-    visualEditing: {
-      token: process.env.NUXT_SANITY_API_READ_TOKEN, // required
-      studioUrl: process.env.NUXT_SANITY_STUDIO_URL, // required
-      stega: true, // enable stega for presentation tool
-    },
-  },
+
   runtimeConfig: {
     public: {
       recaptcha: {
@@ -61,6 +46,17 @@ export default defineNuxtConfig({
     url: 'https://wesleyukadike.dev',
     name: 'Wesley Ukadike - Frontend Specialist',
     description: 'Frontend Specialist specializing in modern web development with Vue.js, Nuxt.js, and cutting-edge technologies.',
+  },
+
+  sanity: {
+    projectId: "orygd7ym",
+    dataset: "production",
+    apiVersion: "2023-01-01",
+    visualEditing: {
+      token: process.env.NUXT_SANITY_API_READ_TOKEN, // required
+      studioUrl: process.env.NUXT_SANITY_STUDIO_URL, // required
+      stega: true, // enable stega for presentation tool
+    },
   },
   app: {
     head: {
@@ -105,15 +101,12 @@ export default defineNuxtConfig({
     build: {
       rollupOptions: {
         output: {
-          
+          manualChunks: {
+            vendor: ['vue', 'vue-router'],
+          },
         },
       },
     },
-  },
-  image: {
-    format: ['webp', 'avif', 'png', 'jpg'],
-    quality: 80,
-    sizes: '320,640,768,1024,1280,1536',
   },
   routeRules: {
     '/**': {
@@ -122,8 +115,11 @@ export default defineNuxtConfig({
         'X-Frame-Options': 'DENY',
         'X-Content-Type-Options': 'nosniff',
         'Referrer-Policy': 'strict-origin-when-cross-origin',
-        'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
-        'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://www.recaptcha.net https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://cdn.sanity.io https://orygd7ym.api.sanity.io https://orygd7ym.apicdn.sanity.io https://api.iconify.design https://vitals.vercel-analytics.com wss:; frame-src 'self' https://www.google.com https://www.recaptcha.net;",
+        'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
+        'Cross-Origin-Embedder-Policy': 'credentialless',
+        'Cross-Origin-Opener-Policy': 'same-origin',
+        'Cross-Origin-Resource-Policy': 'cross-origin',
+        'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://www.recaptcha.net https://www.googletagmanager.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://cdn.sanity.io https://orygd7ym.api.sanity.io https://orygd7ym.apicdn.sanity.io https://api.iconify.design https://vitals.vercel-analytics.com wss:; frame-src 'self' https://www.google.com https://www.recaptcha.net https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'self';",
       },
     },
     '/': {
