@@ -16,24 +16,28 @@
     src: url('/assets/fonts/Sen-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
   }
   @font-face {
     font-family: 'AeonikLight';
     src: url('/assets/fonts/Aeonik-Light.otf') format('opentype');
-    font-weight: 400;
+    font-weight: 300;
     font-style: normal;
+    font-display: swap;
   }
 @font-face {
     font-family: 'Aeonik';
     src: url('/assets/fonts/Aeonik-Regular.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
   }
   @font-face {
     font-family: 'AeonikBold';
     src: url('/assets/fonts/Aeonik-Bold.otf') format('opentype');
-    font-weight: 400;
+    font-weight: 700;
     font-style: normal;
+    font-display: swap;
   }
 
   .fullH{
@@ -74,4 +78,3 @@
   html::-webkit-scrollbar {
     display: none;
   }
-  

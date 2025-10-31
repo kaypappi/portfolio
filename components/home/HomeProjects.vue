@@ -4,7 +4,7 @@
             <template #default="{ item, index }">
                 <div v-if="index === 0" class=" py-4">
                     <h4 class=" text-sm text-slate-400">MY PROJECTS</h4>
-                    <h2 class=" text-5xl !leading-tight font-allrox font-bold">Work that I've done over the years</h2>
+                    <h2 class=" text-5xl !leading-tight font-allrox font-bold">Work I've done over the years</h2>
                 </div>
                 <div v-else-if="index >= masonryItems.length - 1" class=" w-full flex justify-center my-28">
                     <NuxtLink to="/projects">
@@ -30,12 +30,12 @@ import { useWindowSize } from '@vueuse/core'
 const animate = onAnimate()
 const sanity = useSanity()
 const query = groq`*[_type == "projects"][0].projects[0...5]`
-const { data, refresh } = await useAsyncData('projects', () => sanity.fetch(query))
+const { data, refresh } = useLazyAsyncData('projects', () => sanity.fetch(query))
 const { width, height } = useWindowSize()
 const columnWidth=computed(()=>{
     let maxWidth=350
     if(width.value>800) maxWidth=width.value/3
     return maxWidth
 })
-const masonryItems = computed(() => [' ', ...data.value, ' '])
+const masonryItems = computed(() => [' ', ...(data.value || []), ' '])
 </script>

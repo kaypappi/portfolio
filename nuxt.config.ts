@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     },
   },
   modules: [
+    "@nuxt/image",
     "nuxt-icon",
     "@nuxtjs/sanity",
     "@nuxtjs/google-fonts",
@@ -21,9 +22,17 @@ export default defineNuxtConfig({
   ],
   googleFonts: {
     families: {
-      Outfit: true,
-      "Work+Sans": true,
+      Outfit: {
+        wght: [400, 500, 600, 700],
+        ital: [400],
+      },
+      "Work+Sans": {
+        wght: [400, 500, 600, 700],
+      },
     },
+    display: 'swap',
+    preload: true,
+    preconnect: true,
   },
   sanity: {
     projectId: "orygd7ym",
@@ -48,12 +57,79 @@ export default defineNuxtConfig({
       language: "en",
     },
   },
+  site: {
+    url: 'https://wesleyukadike.dev',
+    name: 'Wesley Ukadike - Frontend Specialist',
+    description: 'Frontend Specialist specializing in modern web development with Vue.js, Nuxt.js, and cutting-edge technologies.',
+  },
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'en'
+      },
+      title: 'Wesley Ukadike - Frontend Specialist',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'description', content: 'Frontend Specialist specializing in modern web development with Vue.js, Nuxt.js, and cutting-edge technologies. Creating exceptional user experiences.' },
+        { name: 'keywords', content: 'frontend developer, vue.js, nuxt.js, web development, javascript, typescript, portfolio' },
+        { name: 'author', content: 'Wesley Ukadike' },
+        { name: 'robots', content: 'index, follow' },
+        { property: 'og:title', content: 'Wesley Ukadike - Frontend Specialist' },
+        { property: 'og:description', content: 'Frontend Specialist specializing in modern web development with Vue.js, Nuxt.js, and cutting-edge technologies.' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: 'https://wesleyukadike.dev' },
+        { property: 'og:image', content: 'https://wesleyukadike.dev/og-image.jpg' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: 'Wesley Ukadike - Frontend Specialist' },
+        { name: 'twitter:description', content: 'Frontend Specialist specializing in modern web development with Vue.js, Nuxt.js, and cutting-edge technologies.' },
+      ],
+      link: [
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+        { rel: 'dns-prefetch', href: 'https://cdn.sanity.io' },
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'canonical', href: 'https://wesleyukadike.dev' },
+      ],
+    },
+  },
   nitro: {
     prerender: {
       crawlLinks: true,
       routes: ["/"],
       failOnError: false,
     },
-    routeRules: {},
+    compressPublicAssets: true,
+  },
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          
+        },
+      },
+    },
+  },
+  image: {
+    format: ['webp', 'avif', 'png', 'jpg'],
+    quality: 80,
+    sizes: '320,640,768,1024,1280,1536',
+  },
+  routeRules: {
+    '/**': {
+      headers: {
+        'Cache-Control': 'public, max-age=31536000, immutable',
+        'X-Frame-Options': 'DENY',
+        'X-Content-Type-Options': 'nosniff',
+        'Referrer-Policy': 'strict-origin-when-cross-origin',
+        'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+        'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://www.recaptcha.net https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://cdn.sanity.io https://orygd7ym.api.sanity.io https://orygd7ym.apicdn.sanity.io https://api.iconify.design https://vitals.vercel-analytics.com wss:; frame-src 'self' https://www.google.com https://www.recaptcha.net;",
+      },
+    },
+    '/': {
+      headers: {
+        'Cache-Control': 'public, max-age=3600',
+      },
+    },
   },
 });

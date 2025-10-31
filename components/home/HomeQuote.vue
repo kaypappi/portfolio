@@ -2,18 +2,12 @@
   <div>
     <div class="slider">
       <div class="slide-track">
-        <div class="slide text-xl font-allrox font-bold "> I never stop learning, I always seek ways to improve my craft. It
-          drives everything i do <span class=" mx-8">🌸</span></div>
-        <div class="slide text-xl font-allrox font-bold "> I never stop learning, I always seek ways to improve my craft. It
-          drives everything i do <span class=" mx-8">🌸</span></div>
-        <div class="slide text-xl font-allrox font-bold "> I never stop learning, I always seek ways to improve my craft. It
-          drives everything i do <span class=" mx-8">🌸</span></div>
-        <div class="slide text-xl font-allrox font-bold "> I never stop learning, I always seek ways to improve my craft. It
-          drives everything i do <span class=" mx-8">🌸</span></div>
-        <div class="slide text-xl font-allrox font-bold "> I never stop learning, I always seek ways to improve my craft. It
-          drives everything i do <span class=" mx-8">🌸</span></div>
-        <div class="slide text-xl font-allrox font-bold "> I never stop learning, I always seek ways to improve my craft. It
-          drives everything i do <span class=" mx-8">🌸</span></div>
+        <div class="slide text-xl font-allrox font-bold "> Code is poetry written in logic, where every function tells a story of innovation <span class=" mx-8">💻</span></div>
+        <div class="slide text-xl font-allrox font-bold "> The best error message is the one that never appears <span class=" mx-8">🚀</span></div>
+        <div class="slide text-xl font-allrox font-bold "> Every great developer you know got there by solving problems they were unqualified to solve <span class=" mx-8">🌟</span></div>
+        <div class="slide text-xl font-allrox font-bold "> First, solve the problem. Then, write the code <span class=" mx-8">🎯</span></div>
+        <div class="slide text-xl font-allrox font-bold "> The only way to learn a new programming language is by writing programs in it <span class=" mx-8">📚</span></div>
+        <div class="slide text-xl font-allrox font-bold "> Simplicity is the ultimate sophistication in software design <span class=" mx-8">✨</span></div>
 
 
 
