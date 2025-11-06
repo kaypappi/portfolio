@@ -1,125 +1,209 @@
 <template>
-  <transition name="fade" mode="out-in">
-      <div v-if="loading" class="page-loader  flex items-center relative justify-center ">
-        <svg class=" absolute top-[50%] left-[50%]" xmlns="http://www.w3.org/2000/svg" width="200" height="200">
-          <!-- <circle cx="100" cy="100" r="80" pathLength="1"></circle> -->
-          <path id="path1" stroke-linejoin="round" fill="none" stroke-linecap="round"
-            d="m97.99999,26.00002l59.75599,38.75l0,77.49999l-59.75599,38.75l-59.75599,-38.75l0,-77.49999l59.75599,-38.75z"
-            stroke-width="5" pathLength="1" />
+  <div class="layout-root noisebg">
+    <NuxtLoadingIndicator color="#8a4af3" :height="5" />
 
-        </svg>
-        <img class=" loader w-10 h-10 opacity-0 -ml-24 hover:rotate-180 hover:mb-0 hover:mt-2 transition-all"
-          src="../assets/imgs/winkbit.png" alt="logo" width="40" height="40" />
+    <transition name="loader-fade">
+      <div
+        v-if="showInitialLoader"
+        class="loader-overlay noisebg"
+        role="status"
+        aria-live="polite"
+        aria-label="Loading portfolio"
+      >
+        <div class="loader-shell">
+          <svg class="loader-hexagon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path
+              class="loader-hexagon-path"
+              d="m100,26l60,38.75v77.5l-60,38.75-60-38.75V64.75L100,26z"
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              pathLength="1"
+            />
+          </svg>
+          <img
+            :src="winkbitLogo"
+            alt="Winkbit logo"
+            width="72"
+            height="72"
+            class="loader-logo"
+          />
+        </div>
       </div>
+    </transition>
 
-
-
-    <div v-else class="min-h-screen w-screen bg-black relative">
-      <NuxtLoadingIndicator color="#8a4af3" :height="5" />
+    <div :class="containerClass">
       <transition name="slide">
-            <SharedSideNav v-if="showSideNav" :toggleSideNav="toggleSideNav" />
-        </transition>
-      <ToastsWrapper/>
-      <slot></slot>
-      <SmallFooter/>
+        <SharedSideNav v-if="showSideNav" :toggleSideNav="toggleSideNav" />
+      </transition>
+
+      <ToastsWrapper />
+      <slot />
+      <SmallFooter />
     </div>
-</transition>
+  </div>
 </template>
-<script setup>
-import { ref } from 'vue'
+
+<script setup lang="ts">
+import { ref, computed, onBeforeUnmount } from 'vue'
+import { onNuxtReady } from '#app'
+import winkbitLogo from '~/assets/imgs/winkbit.png'
+
 const showSideNav = useSideNav()
 const toggleSideNav = () => {
-    showSideNav.value = !showSideNav.value
+  showSideNav.value = !showSideNav.value
 }
 
-const loading = ref(true)
+const showInitialLoader = ref(true)
+let hideLoaderTimer: number | undefined
 
-onMounted(() => {
-  // Simple loading animation - show for 2 seconds
-  setTimeout(() => {
-    loading.value = false
-  }, 2000)
+const containerClass = computed(() => [
+  'layout-main',
+  showInitialLoader.value ? 'layout-main--hidden' : 'layout-main--visible',
+])
+
+onNuxtReady(() => {
+  window.requestAnimationFrame(() => {
+    hideLoaderTimer = window.setTimeout(() => {
+      showInitialLoader.value = false
+    }, 1400)
+  })
+})
+
+onBeforeUnmount(() => {
+  if (hideLoaderTimer) {
+    window.clearTimeout(hideLoaderTimer)
+  }
 })
 </script>
-<style >
-.layout {
-  background-color: rgba(0, 0, 0, 0.3);
-}
 
-.fade-enter-active {
-  animation: coming 0.4s;
-  animation-delay: 0.2s;
-  opacity: 0;
-}
-
-.fade-leave-active {
-  animation: going 0.4s;
-}
-
-.page-loader{
+<style scoped>
+.layout-root {
+  position: relative;
   min-height: 100vh;
-  background: black;
+  width: 100vw;
+  color: #fff;
+  overflow: hidden;
 }
 
-.page-loader circle,
-.page-loader path {
+.layout-main {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.layout-main--hidden {
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+}
+
+.layout-main--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 60;
+  pointer-events: none;
+}
+
+.loader-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(2px);
+}
+
+.loader-shell {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  z-index: 1;
+}
+
+.loader-hexagon {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  /* animation: loader-spin 1.4s ease-in-out; */
+}
+
+.loader-hexagon-path {
   fill: transparent;
   stroke: #8a4af3;
   stroke-width: 6px;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  visibility: hidden;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  animation: loader-trace 1.2s ease-in-out forwards;
+  filter: drop-shadow(0 0 16px rgba(138, 74, 243, 0.45));
 }
 
-.page-loader circle {
-  transform-origin: 100px 100px;
-  transform: rotate(-90deg);
+.loader-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 72px;
+  height: 72px;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  animation: loader-pulse 1.4s ease-in-out;
 }
 
-.slide-enter-active {
-    transition: all 0.5s ease-out;
-
+.loader-fade-enter-active,
+.loader-fade-leave-active {
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
+.loader-fade-enter-from,
+.loader-fade-leave-to {
+  opacity: 0;
+  transform: scale(0.98);
+}
+
+.slide-enter-active,
 .slide-leave-active {
-
-    transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
-.slide-enter-from {
-    transform: translateX(500px);
-}
-
+.slide-enter-from,
 .slide-leave-to {
-    transform: translateX(500px);
+  transform: translateX(500px);
 }
 
-@keyframes going {
-  from {
-    transform: translateX(0);
+@keyframes loader-trace {
+  0% {
+    stroke-dashoffset: 1;
   }
-
-  to {
-    transform: translateX(-10px);
-    opacity: 0;
+  100% {
+    stroke-dashoffset: 0;
   }
 }
 
-@keyframes coming {
-  from {
-    transform: translateX(-10px);
-    opacity: 0;
+@keyframes loader-spin {
+  0% {
+    transform: rotate(0deg);
   }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
-  to {
-    transform: translateX(0px);
+@keyframes loader-pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
     opacity: 1;
   }
 }

@@ -1,5 +1,5 @@
 <template>
-    <div  class=" grid grid-cols-1 md:grid-cols-2">
+    <div  class=" grid grid-cols-1 md:grid-cols-2 text-black">
         <div class=" w-full h-full bg-grey-200 flex flex-col justify-center items-center">
             <div class=" max-w-md px-4 md:px-0 flex py-20 flex-col justify-center ">
                 <h1 class="  text-5xl text-black mb-6 font-allrox font-bold">{{data.title}}</h1>

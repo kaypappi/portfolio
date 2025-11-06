@@ -108,7 +108,7 @@ export default defineNuxtConfig({
       },
     },
   },
-  routeRules: {
+  /* routeRules: {
     '/**': {
       headers: {
         'Cache-Control': 'public, max-age=31536000, immutable',
@@ -119,7 +119,7 @@ export default defineNuxtConfig({
         'Cross-Origin-Embedder-Policy': 'credentialless',
         'Cross-Origin-Opener-Policy': 'same-origin',
         'Cross-Origin-Resource-Policy': 'cross-origin',
-        'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://www.recaptcha.net https://www.googletagmanager.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://cdn.sanity.io https://orygd7ym.api.sanity.io https://orygd7ym.apicdn.sanity.io https://api.iconify.design https://vitals.vercel-analytics.com wss:; frame-src 'self' https://www.google.com https://www.recaptcha.net https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'self';",
+        'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://www.recaptcha.net https://www.googletagmanager.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://cdn.sanity.io https://orygd7ym.api.sanity.io https://orygd7ym.apicdn.sanity.io https://api.iconify.design https://vitals.vercel-analytics.com wss:; frame-src 'self' about: https://www.google.com https://www.recaptcha.net https://challenges.cloudflare.com https://*.sanity.build https://*.sanity.studio https://sanity.build https://sanity.studio; object-src 'none'; base-uri 'self'; form-action 'self';",
       },
     },
     '/': {
@@ -127,5 +127,5 @@ export default defineNuxtConfig({
         'Cache-Control': 'public, max-age=3600',
       },
     },
-  },
+  }, */
 });

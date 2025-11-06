@@ -1,5 +1,5 @@
 <template>
-    <div class=" w-full grid grid-cols-1 md:grid-cols-2 ">
+    <div class=" w-full grid grid-cols-1 md:grid-cols-2 text-black ">
         <div class="w-full h-auto">
             <img class="w-full h-full object-cover" :src="$urlFor(data.image).url()" alt="logo">
         </div>

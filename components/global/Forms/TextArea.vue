@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <label :for="name" class="block text-sm font-medium text-gray-900 mb-2">{{ label }}</label>
+        <label :for="name" class="block text-sm font-medium text-gray-300 mb-2">{{ label }}</label>
         <div
             class="flex mt-2 bg-white items-center p-4 rounded-md shadow-[0px_4px_10px_rgba(0,0,0,0.08)] text-black">
             <textarea

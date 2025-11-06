@@ -83,11 +83,13 @@ export default function useNotifications() {
   };
 
   const stopBodyOverflow = () => {
-    document && document.body.classList.add(...["hide-overflow"]);
+    if (typeof document === "undefined") return;
+    document.body.classList.add("hide-overflow");
   };
 
   const allowBodyOverflow = () => {
-    document && document.body.classList.remove(...["hide-overflow"]);
+    if (typeof document === "undefined") return;
+    document.body.classList.remove("hide-overflow");
   };
 
   return {

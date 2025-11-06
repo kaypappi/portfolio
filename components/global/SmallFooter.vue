@@ -1,6 +1,6 @@
 <template>
     <div
-        class="footer-bottom text-white text-sm w-full px-4  py-10 md:py-0 mt-10 md:mt-0   border-t border-t-gray-700 grid grid-cols-12 md:gap-8">
+        class="footer-bottom bg-black text-white text-sm w-full px-4  py-10 md:py-0 mt-10 md:mt-0   border-t border-t-gray-700 grid grid-cols-12 md:gap-8">
         <div class=" col-span-12 md:col-span-5 flex flex-wrap   justify-center items-center md:justify-end md:py-10">
             <span>REACH ME VIA</span>
             <img class=" mx-4 w-10 md:w-max"

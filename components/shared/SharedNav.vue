@@ -43,7 +43,7 @@
 </template>
 
 <script  setup lang="ts">
-import { defineProps, withDefaults, ref, watchEffect } from 'vue'
+import { defineProps, withDefaults, ref } from 'vue'
 import { vElementHover } from '@vueuse/components'
 
 const props = withDefaults(defineProps<{
@@ -59,6 +59,12 @@ const menuRef = ref(null)
 const showMenu = ref(false)
 const showSideNav = useSideNav()
 
+useHead(() => ({
+    bodyAttrs: {
+        class: showSideNav.value ? 'menu-open' : undefined
+    }
+}))
+
 
 
 const onHover = (state) => {
@@ -71,19 +77,6 @@ const onHover = (state) => {
 const toggleSideNav = () => {
     showSideNav.value = !showSideNav.value
 }
-
-watchEffect(() => {
-
-    if (showSideNav.value) {
-        return document.body.classList.add('menu-open')
-    } else {
-        document.body.classList.remove('menu-open')
-    }
-})
-
-
-
-
 </script>
 <style scoped>
 /* .sticky-nav{
